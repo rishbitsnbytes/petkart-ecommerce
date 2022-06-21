@@ -1,2 +1,3 @@
-# petkart-ecommerce
-Petkart - An Ecommerce Project related with pets, their products and services
+## E-Commerce Backend
+
+This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
