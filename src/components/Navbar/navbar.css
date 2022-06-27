@@ -1,0 +1,12 @@
+.nav-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: rgba(162,213,171, 0.85);
+}
+
+.nav-bar .active-link {
+    color: var(--color-tertiary);
+    font-weight: var(--weight-bold);
+}

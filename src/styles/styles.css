@@ -4,3 +4,60 @@
 
 /* CSS Component Library Import */
 /* @import url(https://cosmos-ui-cl-ufa.vercel.app/styles/cosmos-ui.css); */
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: var(--br-md);
+    background-color: var(--color-primary-bg);
+}
+ 
+::-webkit-scrollbar-thumb {
+   border-radius: var(--br-md);
+   background-color: var(--color-secondary);
+}
+
+.btn {
+    max-width: none;
+}
+
+/* Temporary, to be updated in CL and then removed from here*/
+.h-inherit {
+    height: inherit;
+}
+.align-self-center {
+    align-self: center;
+}
+.align-self-start {
+   align-self: flex-start;
+}
+.color-faded {
+    color: var(--gray-7);
+}
+.w-30 {
+    width: 30rem;
+}
+.h-30 {
+    height: 30rem;
+}
+.color-quarternary {
+   color: var(--color-quarternary);
+}
+.text-truncate {
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 90%; 
+  height: fit-content; 
+  white-space: nowrap;
+}
+.text-truncate-lines-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: fit-content;
+}
