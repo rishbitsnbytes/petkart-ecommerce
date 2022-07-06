@@ -11,6 +11,7 @@ import {
 } from "./backend/controllers/CartController";
 import {
   getAllCategoriesHandler,
+  getPetCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
 import {
@@ -22,9 +23,11 @@ import {
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
-import { categories } from "./backend/db/categories";
+import { getBrandsHandler } from "./backend/controllers/BrandController";
+import { categories, petCategories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { brands } from "./backend/db/brands";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -35,6 +38,8 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       product: Model,
       category: Model,
+      petCategory: Model,
+      brand: Model,
       user: Model,
       cart: Model,
       wishlist: Model,
@@ -53,6 +58,12 @@ export function makeServer({ environment = "development" } = {}) {
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
+
+      petCategories.forEach((item) =>
+        server.create("petCategory", { ...item })
+      );
+
+      brands.forEach((item) => server.create("brand", { ...item }));
     },
 
     routes() {
@@ -67,7 +78,11 @@ export function makeServer({ environment = "development" } = {}) {
 
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
+      this.get("/petCategories", getPetCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
+
+      // brands routes (public)
+      this.get("/brands", getBrandsHandler.bind(this));
 
       // cart routes (private)
       this.get("/user/cart", getCartItemsHandler.bind(this));

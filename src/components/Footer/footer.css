@@ -1,0 +1,26 @@
+.section-payment-modes {
+    background-color: var(--color-quarternary);
+}
+
+.section-payment-modes i:hover {
+   color: var(--color-tertiary);
+}
+
+.footer-copyright-text {
+    border-top: 1px solid var(--gray-7);
+}
+
+.footer-list-head {
+    background-color: var(--color-quarternary);
+}
+
+footer li {
+    list-style-position: inside;
+    padding: 0 1rem;
+    margin: 0.25rem 0;
+}
+
+footer a:hover {
+    color: var(--color-tertiary);
+}
+

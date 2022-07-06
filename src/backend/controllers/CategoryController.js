@@ -24,6 +24,20 @@ export const getAllCategoriesHandler = function () {
   }
 };
 
+export const getPetCategoriesHandler = function () {
+  try {
+    return new Response(200, {}, { petCategories: this.db.petCategories });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+
 /**
  * This handler handles gets all categories in the db.
  * send GET Request at /api/user/category/:categoryId

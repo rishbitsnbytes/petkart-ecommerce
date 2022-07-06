@@ -1,14 +1,14 @@
-import {
-  v4 as uuid
-} from "uuid";
+import { v4 as uuid } from "uuid";
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
  * */
 
-export const products = [{
+export const products = [
+  {
     _id: uuid(),
-    title: "Isle of Dogs Everyday Silky Coating Dog Shampoo - Jasmine + Vanilla - 500 ml",
+    title:
+      "Isle of Dogs Everyday Silky Coating Dog Shampoo - Jasmine + Vanilla - 500 ml",
     subtitle: "Softening, cleansing, hydrating & fragrant",
     originalMRP: 2500,
     discountPercent: 45,
@@ -19,14 +19,15 @@ export const products = [{
     foodCategory: "None",
     brand: "Isle of Dogs",
     availability: {
-      newArrival: true,
+      newArrival: false,
       inStock: true,
     },
     delivery: {
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -48,7 +49,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -70,11 +72,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Isle of Dog Silky Oatmeal Conditioner For Dogs Sulfate & Paraben Free - 250 ml",
+    title:
+      "Isle of Dog Silky Oatmeal Conditioner For Dogs Sulfate & Paraben Free - 250 ml",
     subtitle: "Mild, gentle on the skin & with odor neutralizers",
     originalMRP: 2000,
     discountPercent: 50,
@@ -85,18 +89,20 @@ export const products = [{
     foodCategory: "None",
     brand: "Isle of Dogs",
     availability: {
-      newArrival: true,
+      newArrival: false,
       inStock: true,
     },
     delivery: {
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Happi Doggy Dental Chew Care (Immune Support )- Turmeric & Shiitake - Regular 4 inch - 150 g - 6 pieces",
+    title:
+      "Happi Doggy Dental Chew Care (Immune Support )- Turmeric & Shiitake - Regular 4 inch - 150 g - 6 pieces",
     subtitle: "Grain-free, rawhide-free dog treats",
     originalMRP: 700,
     discountPercent: 40,
@@ -107,14 +113,15 @@ export const products = [{
     foodCategory: "Veg",
     brand: "Happi Doggy",
     availability: {
-      newArrival: true,
+      newArrival: false,
       inStock: true,
     },
     delivery: {
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -136,7 +143,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -158,11 +166,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Happi Doggy Vegetarian Dental Chew - Zest - Mint (Singles) - Regular - 4 inch - 25 g",
+    title:
+      "Happi Doggy Vegetarian Dental Chew - Zest - Mint (Singles) - Regular - 4 inch - 25 g",
     subtitle: "Grain-free, rawhide-free dog treats",
     originalMRP: 200,
     discountPercent: 65,
@@ -180,11 +190,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Farmina N&D Pumpkin Lamb & Blueberry Grain Free Medium & Maxi Breed Dry Puppy Food",
+    title:
+      "Farmina N&D Pumpkin Lamb & Blueberry Grain Free Medium & Maxi Breed Dry Puppy Food",
     subtitle: "Gluten-free, cruelty-free & preservative-free",
     originalMRP: 2999,
     discountPercent: 25,
@@ -202,11 +214,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Farmina N&D Low Grain Medium & Maxi Breed Adult Dry Dog Food - Chicken & Pomegranate",
+    title:
+      "Farmina N&D Low Grain Medium & Maxi Breed Adult Dry Dog Food - Chicken & Pomegranate",
     subtitle: "Preservative-free, GMO-free, delicious dog food",
     originalMRP: 2999,
     discountPercent: 35,
@@ -224,7 +238,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -246,7 +261,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -268,7 +284,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -290,7 +307,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -312,7 +330,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -334,11 +353,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Sheba Tuna White Meat and Snapper in Gravy Adult Wet Cat Food - 85 g packs",
+    title:
+      "Sheba Tuna White Meat and Snapper in Gravy Adult Wet Cat Food - 85 g packs",
     subtitle: "Tender, high-quality, delicious, international cat food",
     originalMRP: 1999,
     discountPercent: 55,
@@ -356,7 +377,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -378,7 +400,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -400,7 +423,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -422,7 +446,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -444,7 +469,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -466,7 +492,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -488,7 +515,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -510,7 +538,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -532,7 +561,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -554,7 +584,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -576,7 +607,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -598,7 +630,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -620,7 +653,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -642,7 +676,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -664,7 +699,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -686,7 +722,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -708,7 +745,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -730,7 +768,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -752,7 +791,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -774,7 +814,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -796,7 +837,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -818,7 +860,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -840,7 +883,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -862,7 +906,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -884,7 +929,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -906,11 +952,13 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
-    title: "Savic Trotter 3 - Dog & Cat Carrier - Atlantic Blue - 24 X 16 X 15 inches - Holds up to 10 kg",
+    title:
+      "Savic Trotter 3 - Dog & Cat Carrier - Atlantic Blue - 24 X 16 X 15 inches - Holds up to 10 kg",
     subtitle: "Durable, ventilated & easy to carry",
     originalMRP: 4299,
     discountPercent: 15,
@@ -928,7 +976,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -950,7 +999,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -972,7 +1022,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -994,7 +1045,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1016,7 +1068,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1038,7 +1091,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1060,7 +1114,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1082,7 +1137,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1104,7 +1160,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1126,7 +1183,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1148,7 +1206,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1170,7 +1229,8 @@ export const products = [{
       deliveryCharge: 99,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1192,7 +1252,8 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: true,
     },
-    img: '../../assets/prod-images/title',
+    imgUrl:
+      "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/prod-images/",
   },
   {
     _id: uuid(),
@@ -1214,6 +1275,6 @@ export const products = [{
       deliveryCharge: 0,
       fastDelivery: false,
     },
-    img: '../../assets/prod-images.titl}',
-  }
+    imgUrl: "../../assets/prod-images.titl}",
+  },
 ];
