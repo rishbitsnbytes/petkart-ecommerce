@@ -19,7 +19,7 @@ const useBrands = () => {
     fetchBrands();
   }, []);
 
-  return [brands];
+  return [[...brands]];
 };
 
 export { useBrands };

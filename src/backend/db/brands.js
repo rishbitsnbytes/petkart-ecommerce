@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 export const brands = [
   {
     _id: uuid(),
-    brandName: "Isle Of Dogs",
+    brandName: "Isle of Dogs",
     brandImg:
       "https://raw.githubusercontent.com/rishbitsnbytes/petkart-ecommerce/development/src/assets/brands/",
   },

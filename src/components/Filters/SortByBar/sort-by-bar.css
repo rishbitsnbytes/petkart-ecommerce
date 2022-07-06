@@ -1,0 +1,5 @@
+.btn-sort-active {
+    color: var(--color-tertiary);
+    font-weight: 900;
+    border-bottom: 2px solid var(--color-tertiary);
+}

@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import {
   useCategories,
   getFullImgUrl,
-  useProducts,
   getDiscountedPrice,
   useBrands,
 } from "../../utils";
+import { useProducts } from "../../contexts";
 import { useDocumentTitle } from "../../custom-hooks";
 
 // Carousel Image Imports
@@ -45,7 +45,11 @@ import topOffersImg8 from "../../assets/others/top-offers-8.png";
 // Main HomePage Export Component
 const HomePage = () => {
   const [setDocumentTitle] = useDocumentTitle();
-  setDocumentTitle("Petkart | HomePage");
+
+  useEffect(() => {
+    setDocumentTitle("Petkart | HomePage");
+  }, []);
+
   return (
     <div>
       <Carousel />
@@ -427,7 +431,9 @@ const TopOffers = () => {
 };
 
 const TopPicks = () => {
-  const [products] = useProducts();
+  const {
+    productState: { products, areProductsLoading, productError },
+  } = useProducts();
   const [filteredProducts, setFilteredProducts] = useState(null);
 
   const getNewArrivalProducts = (productsData) => {
@@ -438,8 +444,8 @@ const TopPicks = () => {
   };
 
   const getTopRatedProducts = (productsData) => {
-    const topRatedProducts = productsData.sort((a, b) => {
-      return b.totalStars - a.totalStars;
+    const topRatedProducts = productsData.sort((prevProduct, nextProduct) => {
+      return nextProduct.totalStars - prevProduct.totalStars;
     });
     setFilteredProducts(topRatedProducts);
   };
@@ -505,35 +511,47 @@ const TopPicks = () => {
         </div>
         <div className="flex-row flex-justify-center flex-align-center flex-wrap gap-3 w-80-pc">
           {/* Horizontal mini product card */}
-          {(filteredProducts || products).map(
-            (
-              { _id, title, brand, originalMRP, discountPercent, imgUrl },
-              index
-            ) => {
-              if (index < 9) {
-                return (
-                  <Link key={_id} to="/product/:productId" className="btn">
-                    <div className="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
-                      <img
-                        src={getFullImgUrl(imgUrl, title, "png")}
-                        alt={title}
-                        className="w-12 h-12 rounded-md"
-                      />
-                      <div className="m-0-25 w-20 h-12">
-                        <p className="text-truncate-lines-2 mx-0-5 my-0-25 text-md">
-                          {title}
-                        </p>
-                        <p className="color-faded mx-0-5 text-sm-2">{brand}</p>
-                        <p className="color-tertiary mx-0-75 my-0-75 text-lg">
-                          {" "}
-                          ₹{getDiscountedPrice(originalMRP, discountPercent)}
-                        </p>
+          {areProductsLoading ? (
+            <p className="h2 font-bold">Products are loading from server....</p>
+          ) : productError ? (
+            <p className="h2 font-bold">{productError}</p>
+          ) : (
+            (filteredProducts || products).map(
+              (
+                { _id, title, brand, originalMRP, discountPercent, imgUrl },
+                index
+              ) => {
+                if (index < 9) {
+                  return (
+                    <Link
+                      key={_id}
+                      to="/product/:productId"
+                      className="mini-product-card btn"
+                    >
+                      <div className="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                        <img
+                          src={getFullImgUrl(imgUrl, title, "png")}
+                          alt={title}
+                          className="w-12 h-12 rounded-md"
+                        />
+                        <div className="m-0-25 w-20 h-12">
+                          <p className="text-truncate-lines-2 mx-0-5 my-0-25 text-md">
+                            {title}
+                          </p>
+                          <p className="color-faded mx-0-5 text-sm-2">
+                            {brand}
+                          </p>
+                          <p className="color-tertiary mx-0-75 my-0-75 text-lg">
+                            {" "}
+                            ₹{getDiscountedPrice(originalMRP, discountPercent)}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                );
+                    </Link>
+                  );
+                }
               }
-            }
+            )
           )}
         </div>
         <Link
@@ -575,8 +593,8 @@ const FeaturedBrands = () => {
           </h6>
         </div>
         <div className="flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
-          {brands.map(({ brandName, brandImg }) => (
-            <Link to="/products" className="btn">
+          {brands.map(({ _id, brandName, brandImg }) => (
+            <Link to="/products" className="btn" key={_id}>
               <img
                 src={getFullImgUrl(brandImg, brandName, "png")}
                 alt={brandName}

@@ -15,7 +15,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Toys",
+    categoryName: "Toy",
     description:
       "Includes all kinds of playful toys to give the pets time of their life.",
     categoryImg:

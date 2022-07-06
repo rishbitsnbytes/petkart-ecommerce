@@ -1,41 +1,19 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchCategories, fetchPetCategories } from "./";
 
 const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [petCategories, setPetCategories] = useState([]);
 
-  const fetchCategories = async () => {
-    try {
-      const {
-        data: { categories: receivedCategories },
-      } = await axios.get("/api/categories");
-      setCategories(receivedCategories);
-    } catch (error) {
-      console.log(Error);
-    }
-  };
-
-  const fetchPetCategories = async () => {
-    try {
-      const {
-        data: { petCategories: receivedPetCategories },
-      } = await axios.get("/api/petCategories");
-      setPetCategories(receivedPetCategories);
-    } catch (error) {
-      console.log(Error);
-    }
-  };
-
   useEffect(() => {
-    fetchPetCategories();
+    fetchCategories(setCategories);
   }, []);
 
   useEffect(() => {
-    fetchCategories();
+    fetchPetCategories(setPetCategories);
   }, []);
 
-  return [categories, petCategories];
+  return [[...categories], [...petCategories]];
 };
 
 export { useCategories };
