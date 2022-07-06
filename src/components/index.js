@@ -1,2 +1,14 @@
 export { Navbar } from "./Navbar/Navbar";
 export { Footer } from "./Footer/Footer";
+export { FiltersWrapperSidebar } from "./Filters/FiltersWrapperSidebar";
+export { FilterSectionHeader } from "./Filters/FilterSectionHeader";
+export { PriceFilter } from "./Filters/PriceFilter";
+export { PetCategoryFilter } from "./Filters/PetCategoryFilter";
+export { ProductCategoryFilter } from "./Filters/ProductCategoryFilter";
+export { RatingFilter } from "./Filters/RatingFilter";
+export { FoodCategoryFilter } from "./Filters/FoodCategoryFilter";
+export { BrandFilter } from "./Filters/BrandFilter";
+export { SearchBar } from "./SearchBar/SearchBar";
+export { SortByBar } from "./Filters/SortByBar/SortByBar";
+export { ProductListingSection } from "./Products/ProductListingSection";
+export { ProductCard } from "./Products/ProductCard";

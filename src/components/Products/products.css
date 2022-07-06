@@ -1,0 +1,29 @@
+.card-container:hover {
+    box-shadow: 0px 5px 10px 1px var(--color-shadow-bg);
+    border: none;
+
+}
+
+.card-container img {
+    object-fit: cover;
+}
+
+.card-ratings .rating {
+    background-color: var(--color-secondary);
+}
+
+.btn-wishlist {
+    color: var(--color-primary);
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-secondary);
+}
+
+.btn-wishlist:hover {
+     background-color: var(--color-quarternary);
+}
+
+.card-badge {
+    background-color: var(--color-secondary);
+    color: var(--black);
+}

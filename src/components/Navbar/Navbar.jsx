@@ -1,5 +1,6 @@
 import "./navbar.css";
 import petkartLogo from "../../../src/assets/others/petkart-logo-gif.gif";
+import { SearchBar } from "../../components";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -33,18 +34,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* search bar */}
-        <div className="flex-row flex-justify-between flex-align-center flex-gap-1 w-30-pc">
-          <form className="search-bar flex-row flex-justify-between flex-align-center flex-gap-1 px-1 py-0-5 rounded-md w-full">
-            <button className="btn btn-icon">
-              <i className="fa-solid fa-magnifying-glass" />
-            </button>
-            <input
-              className="search-bar-input text-sm"
-              type="search"
-              placeholder="Type to search"
-            />
-          </form>
-        </div>
+        <SearchBar />
         {/* Icons and Buttons */}
         <div className="nav-actions-container flex-row flex-justify-between flex-align-center flex-gap-2">
           <NavLink to="/cart" className={getActiveStyles}>
