@@ -518,14 +518,22 @@ const TopPicks = () => {
           ) : (
             (filteredProducts || products).map(
               (
-                { _id, title, brand, originalMRP, discountPercent, imgUrl },
+                {
+                  _id,
+                  staticId,
+                  title,
+                  brand,
+                  originalMRP,
+                  discountPercent,
+                  imgUrl,
+                },
                 index
               ) => {
                 if (index < 9) {
                   return (
                     <Link
                       key={_id}
-                      to="/product/:productId"
+                      to={`/products/${staticId}`}
                       className="mini-product-card btn"
                     >
                       <div className="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">

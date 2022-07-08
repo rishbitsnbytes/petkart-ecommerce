@@ -12,3 +12,4 @@ export { SearchBar } from "./SearchBar/SearchBar";
 export { SortByBar } from "./Filters/SortByBar/SortByBar";
 export { ProductListingSection } from "./Products/ProductListingSection";
 export { ProductCard } from "./Products/ProductCard";
+export { ProductDetails } from "./Products/ProductDetails";
