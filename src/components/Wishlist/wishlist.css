@@ -1,0 +1,14 @@
+.wishlist-main {
+    min-height: 100vh;
+}
+
+.btn-dismiss {
+    color: var(--color-primary);
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-secondary);
+}
+
+.btn-dismiss:hover {
+     background-color: var(--color-quarternary);
+}

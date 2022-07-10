@@ -17,6 +17,7 @@
     top: 1rem;
     right: 1rem;
     background-color: var(--color-secondary);
+    z-index: 3;
 }
 
 .btn-wishlist:hover {
