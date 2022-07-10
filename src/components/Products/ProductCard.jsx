@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const {
     _id,
+    staticId,
     title,
-    subtitle,
     originalMRP,
     discountPercent,
     totalStars,
@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div>
-      <Link to={`/products/${_id}`}>
+      <Link to={`/products/${staticId}`}>
         <div className="card-container w-25 h-full relative flex-col flex-justify-between flex-align-center rounded-md">
           <img
             src={getFullImgUrl(imgUrl, title)}
