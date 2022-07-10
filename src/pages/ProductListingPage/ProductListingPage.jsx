@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import "./ProductListingPage.css";
 import { useDocumentTitle } from "../../custom-hooks";
+import { useEffect } from "react";
 import { FiltersWrapperSidebar, ProductListingSection } from "../../components";
 
 const ProductListingPage = () => {

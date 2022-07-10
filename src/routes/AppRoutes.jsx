@@ -1,7 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
 // Page imports
-import { HomePage, ProductListingPage, ProductDetailsPage } from "../pages";
+import {
+  HomePage,
+  ProductListingPage,
+  ProductDetailsPage,
+  WishlistPage,
+} from "../pages";
 import { NotFoundPage } from "../pages";
 
 const AppRoutes = () => {
@@ -10,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/products" element={<ProductListingPage />} />
       <Route path="/products/:productId" element={<ProductDetailsPage />} />
+      <Route path="/wishlist" element={<WishlistPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
