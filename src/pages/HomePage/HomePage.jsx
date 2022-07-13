@@ -305,7 +305,7 @@ const TopFoodBrands = () => {
             Love a particular Food Brand? Find it here!
           </h6>
         </div>
-        <div className="top-brands-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+        <div className="section-with-sliders w-80-pc flex-row flex-justify-center relative">
           <div className="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
             {foodBrandImgs.map(({ foodBrandImgSrc }, index) => {
               if (index >= startImg && index <= startImg + 3) {
@@ -388,7 +388,7 @@ const TopOffers = () => {
             Hot Offer! Grab them fast before they run out.
           </h6>
         </div>
-        <div className="top-brands-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+        <div className="section-with-sliders w-80-pc flex-row flex-justify-center relative">
           <div className="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
             {topOffersImgs.map(({ topOffersImgSrc }, index) => {
               if (index >= startImg && index <= startImg + 3) {
@@ -600,7 +600,7 @@ const FeaturedBrands = () => {
             Try them once, love them for life!
           </h6>
         </div>
-        <div className="flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
+        <div className="section-featured-brand flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
           {brands.map(({ _id, brandName, brandImg }) => (
             <Link to="/products" className="btn" key={_id}>
               <img

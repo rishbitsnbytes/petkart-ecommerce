@@ -69,3 +69,6 @@
     text-overflow: ellipsis;
     height: fit-content;
 }
+.pointer {
+    cursor: pointer;
+}

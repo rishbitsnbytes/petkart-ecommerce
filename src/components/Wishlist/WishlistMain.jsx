@@ -21,7 +21,7 @@ const WishlistMain = () => {
         </h1>
         <section className="product-list-wrapper grid grid-col-autofit-w-25 w-full gap-5 pt-1 px-5">
           {products.map((product) => (
-            <ProductCard product={product} wishlistCard />
+            <ProductCard key={product._id} product={product} wishlistCard />
           ))}
         </section>
         <Link

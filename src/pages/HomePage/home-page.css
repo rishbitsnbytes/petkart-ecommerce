@@ -54,6 +54,7 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
+
 }
 
 .category-icons .btn:hover {
@@ -66,6 +67,7 @@
     height: 12rem;
     border-radius: var(--br-50);
     object-fit: cover;
+    box-shadow: 0px 0px 50px 2px var(--color-secondary);
 }
 
 .paw-bg-spots {
@@ -105,10 +107,16 @@
     transform: translate(50%, -50%);
 }
 
-.top-brands-container img {
+.section-with-sliders img {
    width: 100%;
    height: 25rem;
+   box-shadow: 0px 0px 50px 2px var(--color-secondary);
 }
+
+.section-with-sliders img:hover {
+    transform: scale(1.1);
+    transition: transform 400ms ease;
+ }
 
 .section-top-picks .active {
     background-color: var(--color-primary);
@@ -116,14 +124,13 @@
 }
 
 .section-top-picks .mini-product-card {
-    box-shadow: 10px 10px 10px 1px var(--gray-4);
+    box-shadow: 0px 0px 20px 2px var(--color-secondary);
     border-radius: var(--br-md);
 }
 
-.top-offers-container img {
-    width: 100%;
-    height: 25rem;
- }
+.section-featured-brand img {
+    box-shadow: 0px 0px 80px 2px var(--color-secondary);
+}
 
 .section-perks {
     border-top: 1px solid var(--gray-5);

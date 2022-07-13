@@ -56,3 +56,24 @@ input[type="range"]::-moz-range-thumb {
     width: 1rem;    
     border-radius: 3px;
 }
+
+input[type="checkbox"] {
+    color: var(--color-primary);
+    accent-color: var(--color-secondary);
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+input[type="radio"] {
+    color: var(--color-primary);
+    accent-color: var(--color-secondary);
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+input[type="radio"]:checked {
+    color: var(--color-primary);
+    accent-color: var(--color-secondary);
+    width: 1.75rem;
+    height: 1.75rem;
+}
