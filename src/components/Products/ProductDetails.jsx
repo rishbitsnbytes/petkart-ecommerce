@@ -1,5 +1,6 @@
 import "./products.css";
 import { getDiscountedPrice, getFullImgUrl } from "../../utils";
+import { PawBgPrints } from "../../components";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts";
 
@@ -32,7 +33,7 @@ const ProductDetails = () => {
   } = product;
 
   return (
-    <main className="product-page-main w-full flex-col flex-justify-center flex-align-center">
+    <main className="product-page-main w-full flex-col flex-justify-center flex-align-center relative">
       {product ? (
         <section className="product-page-card-wrapper grid-50-50-layout m-1 grid grid-cols-2 grid-rows-1 w-70-pc h-full rounded-md">
           <div className="w-full h-50">
@@ -117,6 +118,7 @@ const ProductDetails = () => {
       ) : (
         "Error!"
       )}
+      <PawBgPrints />
     </main>
   );
 };

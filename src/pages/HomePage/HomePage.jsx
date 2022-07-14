@@ -18,8 +18,6 @@ import carouselImg4 from "../../assets/others/pet-carousel-7.png";
 import carouselImg5 from "../../assets/others/pet-carousel-5.png";
 
 // Other Image Imports
-import pawBgImg1 from "../../assets/others/Paw-Image-transparent.png";
-import pawBgImg2 from "../../assets/others/Paw-GIF-Scale-transparent.gif";
 import widePoster1 from "../../assets/others/wide-poster-offers-sale.png";
 import widePoster2 from "../../assets/others/wide-poster-eos-sale.png";
 import widePoster3 from "../../assets/others/wide-poster-play-0.png";
@@ -41,6 +39,7 @@ import topOffersImg5 from "../../assets/others/top-offers-5.png";
 import topOffersImg6 from "../../assets/others/top-offers-6.png";
 import topOffersImg7 from "../../assets/others/top-offers-7.png";
 import topOffersImg8 from "../../assets/others/top-offers-8.png";
+import { PawBgPrints } from "../../components";
 
 // Main HomePage Export Component
 const HomePage = () => {
@@ -185,21 +184,7 @@ const ShopByCategory = () => {
           VIEW ALL{" "}
         </Link>
         {/* Background graphical paws (design elements) */}
-        <img
-          className="paw-bg-spots paw-spot-2"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-3"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-1"
-          src={pawBgImg1}
-          alt="Paw-Background"
-        />
+        <PawBgPrints />
       </section>
       {/* Sale Wide Poster */}
       <Link to="/products" className="w-full">
@@ -237,21 +222,7 @@ const ShopByCategory = () => {
           VIEW ALL{" "}
         </Link>
         {/* Background graphical paws (design elements) */}
-        <img
-          className="paw-bg-spots paw-spot-2"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-3"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-1"
-          src={pawBgImg1}
-          alt="Paw-Background"
-        />
+        <PawBgPrints />
       </section>
       {/* EOS Sale Wide Poster */}
       <Link to="/products" className="w-full">
