@@ -17,3 +17,8 @@ export { ComposeProducts } from "./filter-utils/composeProducts";
 export { sortBy } from "./filter-utils/sortBy";
 export { searchBy } from "./filter-utils/searchBy";
 export { ScrollToTop } from "./ScrollToTop";
+export { initiateSignup } from "./auth-utils/initiateSignup";
+export { initiateLogin } from "./auth-utils/initiateLogin";
+export { logoutHandler } from "./auth-utils/logoutHandler";
+export { setAuthStateInLocalStorage } from "./auth-utils/setAuthStateInLocalStorage";
+export { removeAuthStateFromLocalStorage } from "./auth-utils/removeAuthStateFromLocalStorage";

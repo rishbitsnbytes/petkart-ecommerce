@@ -4,3 +4,4 @@ export {
   FilterProvider,
   initialFilterState,
 } from "./filter-context";
+export { useAuth, AuthProvider, initialAuthState } from "./auth-context";
