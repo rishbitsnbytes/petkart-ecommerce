@@ -49,10 +49,19 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
   const handleAuthFormSubmit = async (event) => {
     event.preventDefault();
     setLoadingState(true);
-    await initiateSignup(authState, setAuthState, authFormDataState);
-    setLoadingState(false);
-    const from = location?.state?.from?.pathname ?? -1;
-    navigate(from, { replace: true });
+    try {
+      await initiateSignup(authState, setAuthState, authFormDataState);
+      const from = location?.state?.from?.pathname ?? -1;
+      navigate(from, { replace: true });
+      setLoadingState(false);
+    } catch (error) {
+      authFormDataDispatch({
+        type: "CLEAR_AUTH_FORM_DATA",
+        payload: "",
+      });
+      setLoadingState(false);
+      console.log("This error occured:", error);
+    }
   };
 
   useEffect(() => {
@@ -250,7 +259,7 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
                 <i className="fa-solid fa-circle-arrow-right" />
               </span>
             </Link>
-            {authState.authError && (
+            {authError && (
               <p className="auth-error h4 p-1 m-1 rounded-md">
                 Error Occured :<span> {authError} </span>
               </p>

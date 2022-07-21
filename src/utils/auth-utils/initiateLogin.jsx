@@ -43,6 +43,7 @@ const initiateLogin = async (
           authError: "Wrong E-mail or Password. Kindly Enter correct details.",
         };
       });
+      throw error;
     } else if (error.message.includes("404")) {
       updateAuthState((prevAuthState) => {
         return {
@@ -53,6 +54,7 @@ const initiateLogin = async (
           authError: "Entered E-mail is not registered. Kindly Sign-Up first.",
         };
       });
+      throw error;
     } else if (error.message.includes("500")) {
       updateAuthState((prevAuthState) => {
         return {
@@ -63,6 +65,7 @@ const initiateLogin = async (
           authError: "Some Internal Server Error Occured. Try again later.",
         };
       });
+      throw error;
     } else {
       updateAuthState((prevAuthState) => {
         return {
@@ -73,6 +76,7 @@ const initiateLogin = async (
           authError: error.message,
         };
       });
+      throw error;
     }
   }
 };
