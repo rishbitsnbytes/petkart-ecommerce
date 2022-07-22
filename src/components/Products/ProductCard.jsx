@@ -2,7 +2,7 @@ import "./products.css";
 import { getDiscountedPrice, getFullImgUrl } from "../../utils";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, wishlistCard }) => {
   const {
     _id,
     staticId,
@@ -60,18 +60,26 @@ const ProductCard = ({ product }) => {
               <span className="mx-0-5">
                 <i className="fa-solid fa-cart-plus" />
               </span>
-              Add to Cart
+              {wishlistCard ? "Move to Cart" : "Add to Cart"}
             </button>
           </div>
           <div
             className="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
           flex-row flex-justify-center flex-align-center"
           >
-            <button>
-              <span>
-                <i className="fa-regular fa-heart fa-lg" />
-              </span>
-            </button>
+            {wishlistCard ? (
+              <button>
+                <span>
+                  <i className="fa-regular fa-circle-xmark fa-lg" />
+                </span>
+              </button>
+            ) : (
+              <button>
+                <span>
+                  <i className="fa-regular fa-heart fa-lg" />
+                </span>
+              </button>
+            )}
           </div>
           {newArrival && (
             <span className="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">

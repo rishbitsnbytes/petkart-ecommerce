@@ -1,10 +1,12 @@
-import { ProductProvider, FilterProvider } from "./contexts";
+import { ProductProvider, FilterProvider, AuthProvider } from "./contexts";
 
 const AllProviders = ({ children }) => {
   return (
-    <FilterProvider>
-      <ProductProvider>{children}</ProductProvider>
-    </FilterProvider>
+    <AuthProvider>
+      <FilterProvider>
+        <ProductProvider>{children}</ProductProvider>
+      </FilterProvider>
+    </AuthProvider>
   );
 };
 

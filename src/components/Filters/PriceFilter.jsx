@@ -17,7 +17,7 @@ const PriceFilter = () => {
   return (
     <div className="filter-price my-5">
       <p className="filter-head text-lg font-bold mb-0-75">
-        Price -
+        Max Price -
         <span className="mx-1">
           <i className="fa-solid fa-indian-rupee-sign mx-0-5" />
           {maxPriceValue}

@@ -10,3 +10,7 @@
     color: var(--color-tertiary);
     font-weight: var(--weight-bold);
 }
+
+.nav-bar .btn-icon-logout {
+    color: var(--black);
+}
