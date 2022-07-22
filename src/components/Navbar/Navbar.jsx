@@ -1,9 +1,14 @@
 import "./navbar.css";
 import petkartLogo from "../../../src/assets/others/petkart-logo-gif.gif";
-import { SearchBar } from "../../components";
+import { SearchBar, Logout } from "../../components";
+import { useAuth } from "../../contexts";
 import { Link, NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+  const { authState } = useAuth();
+  const { isAuthenticated } = authState;
   const getActiveStyles = ({ isActive }) => {
     return isActive
       ? "btn relative mx-0-5 my-1 w-max h-max active-link"
@@ -49,9 +54,19 @@ const Navbar = () => {
               0
             </span>
           </NavLink>
-          <NavLink to="/profile" className={getActiveStyles}>
+          <NavLink
+            to="/login"
+            className={`btn relative mx-0-5 my-1 w-max h-max ${
+              pathname === "/sign-up" ||
+              pathname === "/login" ||
+              pathname === "/profile"
+                ? "active-link"
+                : ""
+            }`}
+          >
             <i className="fa-solid fa-user fa-xl" />
           </NavLink>
+          {isAuthenticated && <Logout iconButton />}
         </div>
       </div>
     </nav>

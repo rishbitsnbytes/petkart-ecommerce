@@ -1,5 +1,5 @@
 import { SortByBar } from "../../components";
-import { ProductCard } from "../../components/";
+import { ProductCard, LoadingAnimation, ErrorMessage } from "../../components/";
 import { ComposeProducts } from "../../utils";
 import { useProducts } from "../../contexts";
 
@@ -32,14 +32,22 @@ const ProductListingSection = () => {
         </section>
         {/* Product Cards Grid Section */}
         <section className="product-list-wrapper grid grid-col-autofit-w-25 w-full gap-5 pt-1 mt-1">
-          {/* Product Card  */}
-          {areProductsLoading
-            ? "Products are Loading....."
-            : productError
-            ? productError
-            : productsFilteredSorted.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
+          {/* Product Cards  */}
+          {areProductsLoading ? (
+            <LoadingAnimation
+              width="15"
+              height="15"
+              loadingMessage="Products are being fetched..."
+            />
+          ) : productError ? (
+            <div className="m-auto my-3 w-50-pc h-full flex-col flex-justify-center flex-align-center">
+              <ErrorMessage errorMessage={productError} />
+            </div>
+          ) : (
+            productsFilteredSorted.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))
+          )}
         </section>
       </section>
     </div>

@@ -18,8 +18,6 @@ import carouselImg4 from "../../assets/others/pet-carousel-7.png";
 import carouselImg5 from "../../assets/others/pet-carousel-5.png";
 
 // Other Image Imports
-import pawBgImg1 from "../../assets/others/Paw-Image-transparent.png";
-import pawBgImg2 from "../../assets/others/Paw-GIF-Scale-transparent.gif";
 import widePoster1 from "../../assets/others/wide-poster-offers-sale.png";
 import widePoster2 from "../../assets/others/wide-poster-eos-sale.png";
 import widePoster3 from "../../assets/others/wide-poster-play-0.png";
@@ -41,6 +39,7 @@ import topOffersImg5 from "../../assets/others/top-offers-5.png";
 import topOffersImg6 from "../../assets/others/top-offers-6.png";
 import topOffersImg7 from "../../assets/others/top-offers-7.png";
 import topOffersImg8 from "../../assets/others/top-offers-8.png";
+import { PawBgPrints } from "../../components";
 
 // Main HomePage Export Component
 const HomePage = () => {
@@ -185,21 +184,7 @@ const ShopByCategory = () => {
           VIEW ALL{" "}
         </Link>
         {/* Background graphical paws (design elements) */}
-        <img
-          className="paw-bg-spots paw-spot-2"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-3"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-1"
-          src={pawBgImg1}
-          alt="Paw-Background"
-        />
+        <PawBgPrints />
       </section>
       {/* Sale Wide Poster */}
       <Link to="/products" className="w-full">
@@ -237,21 +222,7 @@ const ShopByCategory = () => {
           VIEW ALL{" "}
         </Link>
         {/* Background graphical paws (design elements) */}
-        <img
-          className="paw-bg-spots paw-spot-2"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-3"
-          src={pawBgImg2}
-          alt="Paw-Background"
-        />
-        <img
-          className="paw-bg-spots paw-spot-1"
-          src={pawBgImg1}
-          alt="Paw-Background"
-        />
+        <PawBgPrints />
       </section>
       {/* EOS Sale Wide Poster */}
       <Link to="/products" className="w-full">
@@ -305,7 +276,7 @@ const TopFoodBrands = () => {
             Love a particular Food Brand? Find it here!
           </h6>
         </div>
-        <div className="top-brands-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+        <div className="section-with-sliders w-80-pc flex-row flex-justify-center relative">
           <div className="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
             {foodBrandImgs.map(({ foodBrandImgSrc }, index) => {
               if (index >= startImg && index <= startImg + 3) {
@@ -388,7 +359,7 @@ const TopOffers = () => {
             Hot Offer! Grab them fast before they run out.
           </h6>
         </div>
-        <div className="top-brands-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+        <div className="section-with-sliders w-80-pc flex-row flex-justify-center relative">
           <div className="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
             {topOffersImgs.map(({ topOffersImgSrc }, index) => {
               if (index >= startImg && index <= startImg + 3) {
@@ -600,7 +571,7 @@ const FeaturedBrands = () => {
             Try them once, love them for life!
           </h6>
         </div>
-        <div className="flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
+        <div className="section-featured-brand flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
           {brands.map(({ _id, brandName, brandImg }) => (
             <Link to="/products" className="btn" key={_id}>
               <img
