@@ -5,3 +5,4 @@ export {
   initialFilterState,
 } from "./filter-context";
 export { useAuth, AuthProvider, initialAuthState } from "./auth-context";
+export { useWishlist, WishlistProvider } from "./wishlist-context";

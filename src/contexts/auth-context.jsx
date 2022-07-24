@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState(setInitialAuthState);
 
   return (
-    <AuthContext.Provider value={{ authState, setAuthState }}>
+    <AuthContext.Provider value={{ authState: { ...authState }, setAuthState }}>
       {children}
     </AuthContext.Provider>
   );

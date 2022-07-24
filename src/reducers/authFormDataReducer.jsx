@@ -79,6 +79,9 @@ const authFormDataReducerFunction = (
         rememberMe: true,
       };
     }
+
+    default:
+      return { ...prevAuthFormDataState };
   }
 };
 

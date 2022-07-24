@@ -1,12 +1,12 @@
 import "./wishlist.css";
 import { ProductCard } from "../../components";
-import { useProducts } from "../../contexts";
+import { useWishlist } from "../../contexts";
 import { Link } from "react-router-dom";
 
 const WishlistMain = () => {
   const {
-    productState: { products },
-  } = useProducts();
+    wishlistState: { wishlistItems, isWishlistLoading, wishlistError },
+  } = useWishlist();
 
   return (
     <div>
@@ -16,11 +16,11 @@ const WishlistMain = () => {
           My Wishlist -{" "}
           <span className="color-tertiary font-bold">
             {" "}
-            {products.length} items{" "}
+            {wishlistItems.length} items{" "}
           </span>
         </h1>
         <section className="product-list-wrapper grid grid-col-autofit-w-25 w-full gap-5 pt-1 px-5">
-          {products.map((product) => (
+          {wishlistItems.map((product) => (
             <ProductCard key={product._id} product={product} wishlistCard />
           ))}
         </section>

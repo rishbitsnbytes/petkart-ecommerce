@@ -1,13 +1,16 @@
 import "./navbar.css";
 import petkartLogo from "../../../src/assets/others/petkart-logo-gif.gif";
 import { SearchBar, Logout } from "../../components";
-import { useAuth } from "../../contexts";
+import { useAuth, useWishlist } from "../../contexts";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const { authState } = useAuth();
+  const {
+    wishlistState: { wishlistItems },
+  } = useWishlist();
   const { isAuthenticated } = authState;
   const getActiveStyles = ({ isActive }) => {
     return isActive
@@ -51,7 +54,11 @@ const Navbar = () => {
           <NavLink to="/wishlist" className={getActiveStyles}>
             <i className="fa-regular fa-heart fa-xl" />
             <span className="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">
-              0
+              {isAuthenticated
+                ? wishlistItems.length < 99
+                  ? wishlistItems.length
+                  : "99+"
+                : 0}
             </span>
           </NavLink>
           <NavLink

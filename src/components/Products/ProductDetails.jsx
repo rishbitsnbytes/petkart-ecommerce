@@ -1,7 +1,18 @@
 import "./products.css";
-import { getDiscountedPrice, getFullImgUrl } from "../../utils";
-import { PawBgPrints, LoadingAnimation, ErrorMessage } from "../../components";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  getDiscountedPrice,
+  getFullImgUrl,
+  postToWishlist,
+  deleteFromWishlist,
+} from "../../utils";
+import {
+  PawBgPrints,
+  LoadingAnimation,
+  ErrorMessage,
+  WishlistButton,
+} from "../../components";
 import { useProducts } from "../../contexts";
 
 const ProductDetails = () => {
@@ -127,12 +138,7 @@ const ProductDetails = () => {
                 </span>
                 Add to Cart
               </button>
-              <button className="btn btn-secondary w-fit py-0-75 px-2 rounded-md align-self-center">
-                <span className="mx-0-5">
-                  <i className="fa-regular fa-heart" />
-                </span>
-                Add to Wishlist
-              </button>
+              <WishlistButton product={product} />
             </div>
           </div>
         </section>

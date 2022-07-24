@@ -4,3 +4,7 @@ export {
   initialAuthFormDataState,
   authFormDataReducerFunction,
 } from "./authFormDataReducer";
+export {
+  wishlistReducerFunction,
+  initialWishlistState,
+} from "./wishlistReducerFunction";
