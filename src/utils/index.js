@@ -22,3 +22,6 @@ export { initiateLogin } from "./auth-utils/initiateLogin";
 export { logoutHandler } from "./auth-utils/logoutHandler";
 export { setAuthStateInLocalStorage } from "./auth-utils/setAuthStateInLocalStorage";
 export { removeAuthStateFromLocalStorage } from "./auth-utils/removeAuthStateFromLocalStorage";
+export { fetchWishlist } from "./wishlist-utils/fetchWishlist";
+export { postToWishlist } from "./wishlist-utils/postToWishlist";
+export { deleteFromWishlist } from "./wishlist-utils/deleteFromWishlist";
