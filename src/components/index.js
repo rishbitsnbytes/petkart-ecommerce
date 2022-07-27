@@ -21,3 +21,4 @@ export { PawBgPrints } from "./PawBgPrints/PawBgPrints";
 export { Profile } from "./Profile/Profile";
 export { LoadingAnimation } from "./LoadingAnimation/LoadingAnimation";
 export { ErrorMessage } from "./ErrorMessage/ErrorMessage";
+export { WishlistButton } from "./Products/WishlistButton";
