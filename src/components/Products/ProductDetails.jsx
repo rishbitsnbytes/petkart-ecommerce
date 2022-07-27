@@ -1,6 +1,11 @@
 import "./products.css";
 import { getDiscountedPrice, getFullImgUrl } from "../../utils";
-import { PawBgPrints, LoadingAnimation, ErrorMessage } from "../../components";
+import {
+  PawBgPrints,
+  LoadingAnimation,
+  ErrorMessage,
+  WishlistButton,
+} from "../../components";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts";
 
@@ -66,7 +71,7 @@ const ProductDetails = () => {
           />
         </div>
         <section>
-          <div className="product-details flex-col flex-justify-between flex-align-start gap-1 w-fit h-fit p-1 m-1">
+          <div className="product-details flex-col flex-justify-between flex-align-start gap-1 w-full h-fit p-1 m-1">
             <div className="product-heads mb-0-5">
               <p className="h2 font-bold">{title}</p>
               <p className="h4 font-bold  color-faded">{subtitle}</p>
@@ -121,18 +126,15 @@ const ProductDetails = () => {
               </ul>
             </div>
             <div className="flex-row flex-justify-start flex-align-center gap-2 w-full my-1">
-              <button className="btn btn-primary w-fit py-0-75 px-2 rounded-md align-self-center">
+              <button className="btn btn-primary w-40-pc py-0-75 px-2 rounded-md align-self-center">
                 <span className="mx-0-5">
                   <i className="fa-solid fa-cart-plus" />
                 </span>
                 Add to Cart
               </button>
-              <button className="btn btn-secondary w-fit py-0-75 px-2 rounded-md align-self-center">
-                <span className="mx-0-5">
-                  <i className="fa-regular fa-heart" />
-                </span>
-                Add to Wishlist
-              </button>
+              <div className="w-50-pc">
+                <WishlistButton product={product} />
+              </div>
             </div>
           </div>
         </section>

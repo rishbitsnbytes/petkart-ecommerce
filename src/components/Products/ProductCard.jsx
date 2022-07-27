@@ -1,5 +1,6 @@
 import "./products.css";
 import { getDiscountedPrice, getFullImgUrl } from "../../utils";
+import { WishlistButton } from "../../components";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, wishlistCard }) => {
@@ -67,19 +68,7 @@ const ProductCard = ({ product, wishlistCard }) => {
             className="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
           flex-row flex-justify-center flex-align-center"
           >
-            {wishlistCard ? (
-              <button>
-                <span>
-                  <i className="fa-regular fa-circle-xmark fa-lg" />
-                </span>
-              </button>
-            ) : (
-              <button>
-                <span>
-                  <i className="fa-regular fa-heart fa-lg" />
-                </span>
-              </button>
-            )}
+            <WishlistButton iconButton product={product} />
           </div>
           {newArrival && (
             <span className="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">
