@@ -188,9 +188,11 @@ const CartButton = ({
                   <i className="fa-solid fa-cart-shopping" />
                   <span className="mx-0-75">Go To Cart</span>
                 </span>
+              ) : loadingState ? (
+                <span className="mx-0-75">Adding...</span>
               ) : (
                 <span>
-                  <i className="fa-solid fa-cart-plus" />
+                  <i className="fa-solid fa-cart-shopping" />
                   <span className="mx-0-75">Add To Cart</span>
                 </span>
               )
