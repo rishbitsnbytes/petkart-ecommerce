@@ -1,7 +1,7 @@
 import "./navbar.css";
 import petkartLogo from "../../../src/assets/others/petkart-logo-gif.gif";
 import { SearchBar, Logout } from "../../components";
-import { useAuth, useWishlist } from "../../contexts";
+import { useAuth, useWishlist, useCart } from "../../contexts";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -13,6 +13,10 @@ const Navbar = () => {
   const {
     wishlistState: { wishlistItems },
   } = useWishlist();
+  const {
+    cartState: { cartItems },
+  } = useCart();
+
   const getActiveStyles = ({ isActive }) => {
     return isActive
       ? "btn relative mx-0-5 my-1 w-max h-max active-link"
@@ -22,6 +26,12 @@ const Navbar = () => {
   const totalWishlistItems = isAuthenticated
     ? wishlistItems?.length
       ? wishlistItems.length
+      : 0
+    : 0;
+
+  const totalCartItems = isAuthenticated
+    ? cartItems?.length
+      ? cartItems.length
       : 0
     : 0;
 
@@ -55,7 +65,7 @@ const Navbar = () => {
           <NavLink to="/cart" className={getActiveStyles}>
             <i className="fa-solid fa-cart-shopping fa-xl" />
             <span className="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">
-              0
+              {totalCartItems > 99 ? "99+" : totalCartItems}
             </span>
           </NavLink>
           <NavLink to="/wishlist" className={getActiveStyles}>

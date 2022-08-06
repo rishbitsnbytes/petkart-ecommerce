@@ -45,6 +45,10 @@
     /* Shadow Colors */
     --color-shadow-bg: var(--gray-9);
 
+    /* Modal Background Colors */
+    --color-modal-bg: rgba(229, 239, 193, 0.5);
+
+
     /* Input Form colors */
     --color-form-element-border: var(--black);
     --color-form-element-border-focus: var(--color-primary);

@@ -11,7 +11,7 @@ const useBrands = () => {
       } = await axios.get("/api/brands");
       setBrands(receivedBrands);
     } catch (error) {
-      console.log(error);
+      console.log("Brand Fetch Errors", error);
     }
   };
 

@@ -1,0 +1,21 @@
+.modal-wrapper {
+    top: 0;
+    right: 0;
+    background-color: var(--color-modal-bg); 
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    z-index: var(--z-index-modal);
+}
+
+.modal-content-container {
+    background: rgba( 162, 213, 171, 0.6 );
+    box-shadow: 0 0 20px 10px rgba(85, 123, 131, 0.5 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+}
+
+.modal-content-container .close-btn {
+    top: 2rem;
+    right: 2rem;
+}
+

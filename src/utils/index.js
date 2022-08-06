@@ -25,3 +25,11 @@ export { removeAuthStateFromLocalStorage } from "./auth-utils/removeAuthStateFro
 export { fetchWishlist } from "./wishlist-utils/fetchWishlist";
 export { postToWishlist } from "./wishlist-utils/postToWishlist";
 export { deleteFromWishlist } from "./wishlist-utils/deleteFromWishlist";
+export { fetchCart } from "./cart-utils/fetchCart";
+export { postToCart } from "./cart-utils/postToCart";
+export { deleteFromCart } from "./cart-utils/deleteFromCart";
+export { postCartItemQtyUpdate } from "./cart-utils/postCartItemQtyUpdate";
+export { getCartTotalItems } from "./cart-utils/getCartTotalItems";
+export { getCartPricing } from "./cart-utils/getCartPricing";
+export { fetchCouponsData } from "./cart-utils/fetchCouponsData";
+export { useCouponsData } from "./cart-utils/useCouponsData";

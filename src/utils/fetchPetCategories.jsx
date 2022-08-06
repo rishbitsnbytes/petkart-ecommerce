@@ -7,7 +7,7 @@ const fetchPetCategories = async (setPetCategories) => {
     } = await axios.get("/api/petCategories");
     setPetCategories(receivedPetCategories);
   } catch (error) {
-    console.log(Error);
+    console.log(error);
   }
 };
 

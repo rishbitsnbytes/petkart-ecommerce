@@ -3,16 +3,19 @@ import {
   FilterProvider,
   AuthProvider,
   WishlistProvider,
+  CartProvider,
 } from "./contexts";
 
 const AllProviders = ({ children }) => {
   return (
     <AuthProvider>
-      <WishlistProvider>
-        <FilterProvider>
-          <ProductProvider>{children}</ProductProvider>
-        </FilterProvider>
-      </WishlistProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <FilterProvider>
+            <ProductProvider>{children}</ProductProvider>
+          </FilterProvider>
+        </WishlistProvider>
+      </CartProvider>
     </AuthProvider>
   );
 };

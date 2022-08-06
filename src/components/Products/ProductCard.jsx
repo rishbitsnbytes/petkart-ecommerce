@@ -1,6 +1,6 @@
 import "./products.css";
 import { getDiscountedPrice, getFullImgUrl } from "../../utils";
-import { WishlistButton } from "../../components";
+import { WishlistButton, CartButton } from "../../components";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, wishlistCard }) => {
@@ -18,7 +18,7 @@ const ProductCard = ({ product, wishlistCard }) => {
   } = product;
 
   return (
-    <div>
+    <div className="w-fit">
       <Link to={`/products/${staticId}`}>
         <div className="card-container w-25 h-full relative flex-col flex-justify-between flex-align-center rounded-md">
           <img
@@ -57,18 +57,34 @@ const ProductCard = ({ product, wishlistCard }) => {
                 </p>
               </div>
             </div>
-            <button className="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
-              <span className="mx-0-5">
-                <i className="fa-solid fa-cart-plus" />
-              </span>
-              {wishlistCard ? "Move to Cart" : "Add to Cart"}
-            </button>
+            <div className="w-90-pc align-self-center">
+              {wishlistCard ? (
+                <CartButton
+                  btnFunctionality="MOVE_TO_CART"
+                  product={product}
+                  cardButton
+                />
+              ) : (
+                <CartButton
+                  btnFunctionality="ADD_TO_CART"
+                  product={product}
+                  cardButton
+                />
+              )}
+            </div>
           </div>
           <div
             className="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
           flex-row flex-justify-center flex-align-center"
           >
-            <WishlistButton iconButton product={product} />
+            <div className="w-2 h-2">
+              <WishlistButton
+                btnFunctionality="ADD_TO_WISHLIST"
+                product={product}
+                cardButton
+                iconButton
+              />
+            </div>
           </div>
           {newArrival && (
             <span className="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">
