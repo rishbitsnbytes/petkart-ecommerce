@@ -84,3 +84,15 @@
 .cursor-progress {
     cursor: progress;
 }
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+.min-w-full {
+    min-width: 100%;
+}
+.color-error {
+    color: var(--color-error);
+}
+.w-85-pc {
+    width: 85%;
+}

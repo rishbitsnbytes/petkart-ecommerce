@@ -1,6 +1,6 @@
 import errorImg from "../../assets/others/error-svg.svg";
 
-const ErrorMessage = ({ errorMessage }) => {
+const ErrorMessage = ({ errorMessage = "Some Error Occured" }) => {
   return (
     <div className="w-full h-full flex-col flex-justify-center flex-align-center text-center gap-2">
       <img
@@ -8,7 +8,9 @@ const ErrorMessage = ({ errorMessage }) => {
         src={errorImg}
         alt="Error SVG"
       />
-      <p className="h4 font-bold color-tertiary">{errorMessage}</p>
+      <p className="h4 font-bold color-tertiary">
+        {errorMessage ? errorMessage : "Some Error Occured"}
+      </p>
     </div>
   );
 };

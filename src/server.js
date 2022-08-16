@@ -24,10 +24,12 @@ import {
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
 import { getBrandsHandler } from "./backend/controllers/BrandController";
+import { getCouponsHandler } from "./backend/controllers/CouponController";
 import { categories, petCategories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
 import { brands } from "./backend/db/brands";
+import { coupons } from "./backend/db/coupons";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -43,6 +45,7 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      coupons: Model,
     },
 
     // Runs on the start of the server
@@ -64,6 +67,8 @@ export function makeServer({ environment = "development" } = {}) {
       );
 
       brands.forEach((item) => server.create("brand", { ...item }));
+
+      coupons.forEach((item) => server.create("coupon", { ...item }));
     },
 
     routes() {
@@ -83,6 +88,9 @@ export function makeServer({ environment = "development" } = {}) {
 
       // brands routes (public)
       this.get("/brands", getBrandsHandler.bind(this));
+
+      // coupons routes (public)
+      this.get("/coupons", getCouponsHandler.bind(this));
 
       // cart routes (private)
       this.get("/user/cart", getCartItemsHandler.bind(this));

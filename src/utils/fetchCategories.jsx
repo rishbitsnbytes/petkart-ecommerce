@@ -7,7 +7,7 @@ const fetchCategories = async (setCategories) => {
     } = await axios.get("/api/categories");
     setCategories(receivedCategories);
   } catch (error) {
-    console.log(Error);
+    console.log(error);
   }
 };
 

@@ -10,7 +10,10 @@ const WishlistProvider = ({ children }) => {
     authState: { isAuthenticated, authToken },
   } = useAuth();
 
-  const [wishlistState, wishlistDispatch] = useReducer(wishlistReducerFunction);
+  const [wishlistState, wishlistDispatch] = useReducer(
+    wishlistReducerFunction,
+    initialWishlistState
+  );
 
   useEffect(() => {
     if (isAuthenticated) {

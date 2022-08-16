@@ -8,6 +8,7 @@ import {
   WishlistPage,
   AuthPage,
   ProfilePage,
+  CartPage,
 } from "../pages";
 import { ProtectedRoutes } from "../routes";
 import { NotFoundPage } from "../pages";
@@ -26,6 +27,7 @@ const AppRoutes = () => {
       <Route element={<ProtectedRoutes />}>
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Route>
     </Routes>
   );

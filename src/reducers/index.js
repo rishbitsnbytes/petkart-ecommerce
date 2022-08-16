@@ -7,4 +7,13 @@ export {
 export {
   wishlistReducerFunction,
   initialWishlistState,
-} from "./wishlistReducerFunction";
+} from "./wishlistReducer";
+export { cartReducerFunction, initialCartState } from "./cartReducer";
+export {
+  couponAppliedReducerFunction,
+  initialCouponAppliedState,
+} from "./couponAppliedReducer";
+export {
+  couponsDataReducerFunction,
+  initialCouponsDataState,
+} from "./couponsDataReducer";

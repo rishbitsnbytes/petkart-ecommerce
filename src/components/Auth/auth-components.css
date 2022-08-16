@@ -37,6 +37,7 @@
     visibility: hidden;
     background-color: var(--color-quarternary);
     color: var(--black);
+    font-weight: var(--weight-xbold);
     z-index: 2;
     opacity: 0;
 }

@@ -24,7 +24,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -48,7 +48,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -72,7 +72,7 @@ export const products = [
       inStock: false,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -97,7 +97,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -122,7 +122,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -146,7 +146,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -170,7 +170,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -195,7 +195,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -220,7 +220,7 @@ export const products = [
       inStock: false,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -245,7 +245,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -269,7 +269,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -293,7 +293,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -317,7 +317,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -341,7 +341,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -366,7 +366,7 @@ export const products = [
       inStock: false,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -390,7 +390,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -414,7 +414,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -438,7 +438,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -462,7 +462,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -510,7 +510,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -822,7 +822,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -846,7 +846,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -870,7 +870,7 @@ export const products = [
       inStock: false,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -894,7 +894,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -918,7 +918,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -942,7 +942,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -966,7 +966,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -991,7 +991,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -1279,7 +1279,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: true,
     },
     imgUrl:
@@ -1303,7 +1303,7 @@ export const products = [
       inStock: false,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
@@ -1327,7 +1327,7 @@ export const products = [
       inStock: true,
     },
     delivery: {
-      deliveryCharge: 0,
+      deliveryCharge: 99,
       fastDelivery: false,
     },
     imgUrl:
