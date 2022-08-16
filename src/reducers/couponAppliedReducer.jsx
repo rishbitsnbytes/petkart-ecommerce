@@ -5,6 +5,7 @@ const initialCouponAppliedState = {
   },
   couponAppliedType: "",
   couponAppliedName: "",
+  couponAppliedDescription: "",
 };
 
 const couponAppliedActionTypes = {
@@ -27,6 +28,7 @@ const couponAppliedReducerFunction = (
         },
         couponAppliedType: "COUPON_PERCENT_DISCOUNT",
         couponAppliedName: payload.couponName,
+        couponAppliedDescription: payload.couponDescription,
       };
     }
 
@@ -39,6 +41,7 @@ const couponAppliedReducerFunction = (
         },
         couponAppliedType: "COUPON_FLAT_DISCOUNT",
         couponAppliedName: payload.couponName,
+        couponAppliedDescription: payload.couponDescription,
       };
     }
 

@@ -7,15 +7,17 @@ const getCartPricing = (cartItems, couponAppliedState) => {
   } = couponAppliedState;
 
   let totalMRP = 0,
-    totalDiscount = 0,
+    totalDiscountOnMRP = 0,
     totalDiscountPercent = 0,
     totalDiscountedPrice = 0,
     finalDeliveryCharge = 0,
     savedDeliveryCharge = 0,
     subtotalAmount = 0,
     couponDiscount = 0,
+    totalDiscount = 0,
     totalAmount = 0,
     totalSavings = 0;
+
   cartItems.forEach(
     (
       { originalMRP, discountPercent, qty, delivery: { deliveryCharge } },
@@ -36,8 +38,8 @@ const getCartPricing = (cartItems, couponAppliedState) => {
     }
   );
 
-  totalDiscount = totalMRP - totalDiscountedPrice;
-  totalDiscountPercent = (totalDiscount / totalMRP) * 100;
+  totalDiscountOnMRP = totalMRP - totalDiscountedPrice;
+  totalDiscountPercent = (totalDiscountOnMRP / totalMRP) * 100;
   subtotalAmount = totalDiscountedPrice + finalDeliveryCharge;
 
   const getCouponDiscount = () => {
@@ -54,22 +56,25 @@ const getCartPricing = (cartItems, couponAppliedState) => {
   };
 
   couponDiscount = getCouponDiscount();
+  totalDiscount = totalDiscountOnMRP + couponDiscount;
   totalAmount = subtotalAmount - couponDiscount;
-  totalSavings = totalDiscount + couponDiscount + savedDeliveryCharge;
+  totalSavings = totalDiscountOnMRP + couponDiscount + savedDeliveryCharge;
 
   //   Rounding off all the computations before returning
   totalMRP = Math.round(totalMRP);
-  totalDiscount = Math.round(totalDiscount);
+  totalDiscountOnMRP = Math.round(totalDiscountOnMRP);
   totalDiscountPercent = Math.round(totalDiscountPercent);
   totalDiscountedPrice = Math.round(totalDiscountedPrice);
   finalDeliveryCharge = Math.round(finalDeliveryCharge);
   subtotalAmount = Math.round(subtotalAmount);
   couponDiscount = Math.round(couponDiscount);
+  totalDiscount = Math.round(totalDiscount);
   totalAmount = Math.round(totalAmount);
   totalSavings = Math.round(totalSavings);
 
   return {
     totalMRP: totalMRP,
+    totalDiscountOnMRP: totalDiscountOnMRP,
     totalDiscount: totalDiscount,
     totalDiscountPercent: totalDiscountPercent,
     totalDiscountedPrice: totalDiscountedPrice,

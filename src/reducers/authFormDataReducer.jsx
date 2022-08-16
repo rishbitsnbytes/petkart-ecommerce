@@ -7,7 +7,7 @@ const initialAuthFormDataState = {
   rememberMe: false,
 };
 
-const authFormDataActionType = {
+const authFormDataActionTypes = {
   UPDATE_FIRST_NAME: "UPDATE_FIRST_NAME",
   UPDATE_LAST_NAME: "UPDATE_LAST_NAME",
   UPDATE_EMAIL: "UPDATE_EMAIL",
@@ -23,62 +23,65 @@ const authFormDataReducerFunction = (
   { type, payload }
 ) => {
   switch (type) {
-    case authFormDataActionType.UPDATE_FIRST_NAME: {
+    case authFormDataActionTypes.UPDATE_FIRST_NAME: {
       return {
         ...prevAuthFormDataState,
         firstName: payload,
       };
     }
 
-    case authFormDataActionType.UPDATE_LAST_NAME: {
+    case authFormDataActionTypes.UPDATE_LAST_NAME: {
       return {
         ...prevAuthFormDataState,
         lastName: payload,
       };
     }
 
-    case authFormDataActionType.UPDATE_EMAIL: {
+    case authFormDataActionTypes.UPDATE_EMAIL: {
       return {
         ...prevAuthFormDataState,
         email: payload,
       };
     }
 
-    case authFormDataActionType.UPDATE_PASSWORD: {
+    case authFormDataActionTypes.UPDATE_PASSWORD: {
       return {
         ...prevAuthFormDataState,
         password: payload,
       };
     }
 
-    case authFormDataActionType.UPDATE_CONFIRM_PASSWORD: {
+    case authFormDataActionTypes.UPDATE_CONFIRM_PASSWORD: {
       return {
         ...prevAuthFormDataState,
         confirmPassword: payload,
       };
     }
 
-    case authFormDataActionType.UPDATE_REMEMBER_ME: {
+    case authFormDataActionTypes.UPDATE_REMEMBER_ME: {
       return {
         ...prevAuthFormDataState,
         rememberMe: !prevAuthFormDataState[payload],
       };
     }
 
-    case authFormDataActionType.RESET_AUTH_FORM_DATA: {
+    case authFormDataActionTypes.RESET_AUTH_FORM_DATA: {
       return {
         ...initialAuthFormDataState,
       };
     }
 
-    case authFormDataActionType.LOGIN_WITH_TEST_CREDENTIALS: {
+    case authFormDataActionTypes.LOGIN_WITH_TEST_CREDENTIALS: {
       return {
         ...prevAuthFormDataState,
-        email: "testEmail@test.com",
+        email: "testSingh@test.com",
         password: "testPassword",
         rememberMe: true,
       };
     }
+
+    default:
+      return { ...initialAuthFormDataState };
   }
 };
 

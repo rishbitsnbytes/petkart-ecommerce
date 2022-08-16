@@ -1,0 +1,60 @@
+.checkout-page-main {
+    min-height: 100vh;
+}
+
+.address-selection-section .address-card-label {
+    box-shadow: 0px 0px 10px 2px var(--color-secondary);
+}
+
+.address-selection-section .address-card-label:hover {
+    transform: scale(1.05);
+    transition: transform 300ms ease-in-out;
+}
+
+.address-selection-section input[type="radio"] {
+    visibility: hidden;
+    display: block;
+    width: 0rem;
+    height: 0rem;
+}
+
+.address-selection-section input[type="radio"]:checked + * {
+    box-shadow: 0px 0px 10px 5px var(--color-secondary);
+    background-color: var(--color-quarternary);
+}
+
+.checkout-order-details-card {
+    box-shadow: 0px 0px 30px 5px var(--color-secondary);
+    position: sticky;
+    top: 12rem;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: var(--color-quarternary);
+    font-weight: var(--weight-xbold);
+    color: var(--black);
+    z-index: 2;
+    opacity: 0;
+}
+
+.address-selection-section .add-new-address-btn .tooltip {
+    left: 100%;
+    top: 0%
+}
+
+.address-selection-section .add-new-address-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.address-selection-section .add-new-address-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(0%, -50%);
+    border: 1.2rem solid;
+    border-color: transparent var(--color-quarternary) transparent transparent;
+}

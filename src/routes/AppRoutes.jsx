@@ -9,6 +9,8 @@ import {
   AuthPage,
   ProfilePage,
   CartPage,
+  CheckoutPage,
+  OrderSummaryPage,
 } from "../pages";
 import { ProtectedRoutes } from "../routes";
 import { NotFoundPage } from "../pages";
@@ -26,8 +28,14 @@ const AppRoutes = () => {
       <Route path="/mockman" element={<Mockman />} />
       <Route element={<ProtectedRoutes />}>
         <Route path="/wishlist" element={<WishlistPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile" element={<ProfilePage />}>
+          <Route path="" element={<ProfilePage />} />
+          <Route path="addresses" element={<ProfilePage />} />
+          <Route path="orders" element={<ProfilePage />} />
+        </Route>
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/order-summary/:orderId" element={<OrderSummaryPage />} />
       </Route>
     </Routes>
   );
