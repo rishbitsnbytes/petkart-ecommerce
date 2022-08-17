@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 const CartMain = () => {
   const {
     cartState: { cartItems, isCartLoading, cartError },
-    cartDispatch,
   } = useCart();
 
   const totalCartItems = getCartTotalItems(cartItems);

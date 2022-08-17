@@ -17,3 +17,16 @@ export {
   couponsDataReducerFunction,
   initialCouponsDataState,
 } from "./couponsDataReducer";
+export { ordersReducerFunction, initialOrdersState } from "./ordersReducer";
+export {
+  addressesReducerFunction,
+  initialAddressesState,
+} from "./addressesReducer";
+export {
+  addressFormDataReducerFunction,
+  initialAddressFormDataState,
+} from "./addressFormDataReducer";
+export {
+  checkoutDataReducerFunction,
+  initialCheckoutDataState,
+} from "./checkoutDataReducer";

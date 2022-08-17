@@ -1,7 +1,7 @@
 import { Response } from "miragejs";
 
 /**
- * All the routes related to Brands are present here.
+ * All the routes related to Coupons are present here.
  * These are Publicly accessible routes.
  * */
 

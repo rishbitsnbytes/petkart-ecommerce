@@ -146,3 +146,29 @@ export const updateCartItemHandler = function (schema, request) {
     );
   }
 };
+
+export const clearCart = function (schema, request) {
+  const userId = requiresAuth.call(this, request);
+  try {
+    if (!userId) {
+      return new Response(
+        404,
+        {},
+        {
+          errors: ["The email you entered is not Registered. Not Found error"],
+        }
+      );
+    }
+    const userCart = [];
+    this.db.users.update({ _id: userId }, { cart: userCart });
+    return new Response(200, {}, { cart: userCart });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};

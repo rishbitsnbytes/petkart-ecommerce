@@ -1,0 +1,119 @@
+.profile-page {
+    min-height: 100vh;
+}
+
+.profile-main {
+    box-shadow: 0px 0px 30px 2px var(--color-secondary);
+}
+
+.profile-main .tabs-wrapper .tabs-btn {
+    color: var(--color-primary);
+    box-shadow: 0px 0px 10px 2px var(--color-secondary);
+}   
+
+.profile-main .tabs-wrapper .tabs-btn:hover .tabs-btn-text {
+    transform: scale(1.2);
+    transition: all 300ms ease;
+} 
+
+.profile-main .tabs-wrapper .active {
+    background-color: var(--color-quarternary);
+}
+
+.profile-details-titles {
+    min-width: 30%;
+}
+
+.profile-details-head {
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.profile-address-head {
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.address-list-section .address-card {
+    box-shadow: 0px 0px 10px 2px var(--color-secondary);
+    min-width: 30rem;
+}
+
+.profile-orders-head {
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.order-summary-card {
+    box-shadow: 0px 0px 10px 2px var(--color-secondary);
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.order-summary-card .product-card {
+    border: 1px solid var(--color-secondary);
+}
+
+.order-summary-card .order-desc-titles {
+    min-width: 12rem;
+}
+
+.order-summary-card .product-card img {
+    object-fit: cover;
+}
+
+.order-summary-card > * {
+    flex: 1 1 auto;
+}
+
+.address-form-wrapper {
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.address-form-wrapper::-webkit-scrollbar {
+    width: 3px;
+}
+ 
+.address-form-wrapper::-webkit-scrollbar-track {
+   border-radius: var(--br-md);
+   background-color: transparent;
+}
+
+.address-form-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary);
+ }
+
+.address-form-wrapper input {
+    color: var(--color-primary);
+    background: var(--color-quarternary);
+}
+
+.address-form-wrapper input::placeholder {
+    color: var(--color-primary);
+    opacity: 0.6;
+}
+ 
+.address-form-wrapper::-webkit-scrollbar-thumb {
+   border-radius: var(--br-md);
+   background-color: var(--color-tertiary);
+}
+
+.price-breakup-card .horizontal-line {
+    border-top: 1px solid var(--color-primary);
+}
+
+.price-breakup-card {
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.price-breakup-card::-webkit-scrollbar {
+    width: 3px;
+}
+ 
+.price-breakup-card::-webkit-scrollbar-track {
+   border-radius: var(--br-md);
+   background-color: transparent;
+}
+
+.price-breakup-card::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary);
+ }

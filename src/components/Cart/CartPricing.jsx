@@ -1,34 +1,51 @@
 import "./cart.css";
 import { getCartPricing } from "../../utils";
-import { useCart } from "../../contexts";
+import { useCart, useCheckout } from "../../contexts";
 import { CouponInput } from "../../components";
 import {
   couponAppliedReducerFunction,
   initialCouponAppliedState,
 } from "../../reducers";
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CartPricing = ({ totalCartItems }) => {
   const {
     cartState: { cartItems },
   } = useCart();
+  const { checkoutDataDispatch } = useCheckout();
+  const navigate = useNavigate();
 
   const [couponAppliedState, couponAppliedDispatch] = useReducer(
     couponAppliedReducerFunction,
     initialCouponAppliedState
   );
 
+  const cartPricing = getCartPricing(cartItems, couponAppliedState);
   const {
     totalMRP,
-    totalDiscount,
+    totalDiscountOnMRP,
     totalDiscountPercent,
     totalDiscountedPrice,
     finalDeliveryCharge,
     subtotalAmount,
     couponDiscount,
+    totalDiscount,
     totalAmount,
     totalSavings,
-  } = getCartPricing(cartItems, couponAppliedState);
+  } = cartPricing;
+
+  const handleCheckout = async () => {
+    await checkoutDataDispatch({
+      type: "CHECKOUT_DATA_UPDATE",
+      payload: {
+        orderedItems: [...cartItems],
+        priceDetails: { ...cartPricing },
+        couponApplied: { ...couponAppliedState },
+      },
+    });
+    navigate("/checkout");
+  };
 
   return (
     <section className="cart-price-details-card flex-col flex-justify-start flex-align-start w-full gap-1 rounded-md px-4 py-3 w-full">
@@ -56,7 +73,7 @@ const CartPricing = ({ totalCartItems }) => {
           <p className="h4 font-sbold">Total Discount on MRP</p>
           <p className="h4 font-sbold color-tertiary">
             <span className="mx-1 h5">({totalDiscountPercent}%)</span>₹
-            {totalDiscount}
+            {totalDiscountOnMRP}
           </p>
         </div>
         <div className="flex-row flex-justify-between flex-align-center w-full">
@@ -108,7 +125,11 @@ const CartPricing = ({ totalCartItems }) => {
       <p className="h5 font-sbold color-tertiary py-1">
         You will save ₹{totalSavings} on this order!
       </p>
-      <button className="h3 btn btn-primary w-full py-1 my-1 rounded-md">
+
+      <button
+        className="h3 btn btn-primary w-full py-1 my-1 rounded-md"
+        onClick={handleCheckout}
+      >
         Checkout
       </button>
     </section>

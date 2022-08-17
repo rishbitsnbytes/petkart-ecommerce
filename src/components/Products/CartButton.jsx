@@ -2,8 +2,6 @@ import { useAuth, useCart, useWishlist } from "../../contexts";
 import { useNavigate, useLocation } from "react-router-dom";
 import { postToCart, deleteFromCart, deleteFromWishlist } from "../../utils";
 import { useState } from "react";
-import { LoadingAnimation } from "../LoadingAnimation/LoadingAnimation";
-import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 
 /* This component accepts 2 props :-  
 --> btnFunctionality [Mandatory] (default is "ADD_TO_CART") - (for different functions such as add to cart, move to cart, remove from cart )

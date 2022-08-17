@@ -12,14 +12,14 @@ const CouponsModal = ({
   const {
     couponsDataState: { couponsData, isCouponsDataLoading, couponsDataError },
   } = useCouponsData();
-  const [selectedCoupon, setSelectedCoupon] = useState({});
+  const [selectedCoupon, setSelectedCoupon] = useState(null);
 
   const handleApplyCoupon = (selectedCoupon) => {
-    const { couponName, couponType, couponValue, minCartValue } =
+    const { couponName, couponType, couponValue, couponDescription } =
       selectedCoupon;
     couponAppliedDispatch({
       type: couponType,
-      payload: { couponValue, couponName },
+      payload: { couponValue, couponName, couponDescription },
     });
     setIsCouponApplied(true);
     setShowModal(false);
