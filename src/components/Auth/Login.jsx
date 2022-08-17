@@ -56,7 +56,7 @@ const Login = ({ activeAuthComponentDisplay }) => {
   useEffect(() => {
     setDocumentTitle("Login || Petkart");
     if (isAuthenticated) {
-      navigate("/profile");
+      navigate("/profile", { replace: true });
     }
   }, []);
 
