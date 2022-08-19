@@ -1,6 +1,7 @@
 import { logoutHandler } from "../../utils";
 import { LoadingAnimation } from "../../components";
 import { useAuth } from "../../contexts";
+import { useToast } from "../../custom-hooks";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -8,10 +9,12 @@ const Logout = ({ iconButton }) => {
   const { authState, setAuthState } = useAuth();
   const [loadingState, setLoadingState] = useState(false);
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   const handleLogout = async (event) => {
     setLoadingState(true);
     await logoutHandler(authState, setAuthState);
+    showToast("Logged out!", "info");
     setLoadingState(false);
     navigate("/", { replace: true });
   };

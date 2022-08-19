@@ -1,6 +1,7 @@
 import "./profile.css";
 import { ModalPortal, AddressForm } from "../../components";
 import { useAuth, useAddresses } from "../../contexts";
+import { useToast } from "../../custom-hooks";
 import { postNewAddress } from "../../utils";
 
 import {
@@ -19,6 +20,7 @@ const AddNewAddressButton = ({ iconButton = false }) => {
     authState: { authToken },
   } = useAuth();
   const [showModal, setShowModal] = useState(false);
+  const { showToast } = useToast();
 
   const saveNewAddress = async () => {
     try {
@@ -29,6 +31,7 @@ const AddNewAddressButton = ({ iconButton = false }) => {
         type: "ADDRESSES_UPDATE",
         payload: { addresses: addresses, areAddressesLoading: false },
       });
+      showToast("Address added successfully", "success");
     } catch (error) {
       addressesDispatch({
         type: "ADDRESSES_ERROR",
@@ -37,6 +40,7 @@ const AddNewAddressButton = ({ iconButton = false }) => {
           addressesError: `Addresses could not be fetched due to some server error. Please try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Addresses could not be added. Try again!", "error");
     }
     setShowModal(false);
     newAddressFormDataDispatch({

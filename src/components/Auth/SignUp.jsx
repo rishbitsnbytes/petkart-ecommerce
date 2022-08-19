@@ -1,7 +1,11 @@
 import "./auth-components.css";
 import { useEffect, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import { useAuthFormData, useDocumentTitle } from "../../custom-hooks";
+import {
+  useAuthFormData,
+  useDocumentTitle,
+  useToast,
+} from "../../custom-hooks";
 import { useAuth } from "../../contexts";
 import { initiateSignup, setAuthStateInLocalStorage } from "../../utils";
 import { LoadingAnimation } from "../../components";
@@ -19,6 +23,7 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [setDocumentTitle] = useDocumentTitle();
+  const { showToast } = useToast();
 
   const handleAuthFormDataChange = (event, actionType) =>
     authFormDataDispatch({
@@ -51,6 +56,7 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
     setLoadingState(true);
     try {
       await initiateSignup(authState, setAuthState, authFormDataState);
+      showToast("Signed up successfully", "success");
       const from = location?.state?.from?.pathname ?? -1;
       navigate(from, { replace: true });
       setLoadingState(false);
@@ -59,8 +65,8 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
         type: "CLEAR_AUTH_FORM_DATA",
         payload: "",
       });
+      showToast(`${error}`, "error");
       setLoadingState(false);
-      console.log("This error occured:", error);
     }
   };
 
@@ -259,11 +265,6 @@ const SignUp = ({ activeAuthComponentDisplay }) => {
                 <i className="fa-solid fa-circle-arrow-right" />
               </span>
             </Link>
-            {authError && (
-              <p className="auth-error h4 p-1 m-1 rounded-md">
-                Error Occured :<span> {authError} </span>
-              </p>
-            )}
           </div>
         </form>
       )}

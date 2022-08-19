@@ -6,6 +6,7 @@ import {
   initialAddressFormDataState,
 } from "../../reducers";
 import { editAddress } from "../../utils";
+import { useToast } from "../../custom-hooks";
 import { useReducer, useState } from "react";
 
 /* This component accepts 2 props :-  
@@ -23,6 +24,7 @@ const EditAddressButton = ({ address = {}, iconButton = false }) => {
     authState: { authToken },
   } = useAuth();
   const [showModal, setShowModal] = useState(false);
+  const { showToast } = useToast();
 
   const handleAddressEdit = () => {
     setShowModal(true);
@@ -46,6 +48,7 @@ const EditAddressButton = ({ address = {}, iconButton = false }) => {
         type: "ADDRESSES_UPDATE",
         payload: { addresses: addresses, areAddressesLoading: false },
       });
+      showToast("Address updated successfully!", "success");
     } catch (error) {
       addressesDispatch({
         type: "ADDRESSES_ERROR",
@@ -54,6 +57,7 @@ const EditAddressButton = ({ address = {}, iconButton = false }) => {
           addressesError: `Addresses could not be fetched due to some server error. Please try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Address could not be updated. Try again!", "error");
     }
     setShowModal(false);
     editAddressFormDataDispatch({
