@@ -164,7 +164,14 @@ const ShopByCategory = () => {
         <div className="flex-row flex-justify-evenly flex-align-center flex-wrap gap-1 my-1 mx-3 py-1 px-3">
           {categories.map(({ _id, categoryImg, categoryName }) => (
             <div className="category-icons" key={_id}>
-              <Link className="btn" to="/products">
+              <Link
+                className="btn"
+                to="/products"
+                state={{
+                  filterType: "FILTER_BY_PRODUCT_CATEGORY",
+                  filterCategory: categoryName,
+                }}
+              >
                 <img
                   src={getFullImgUrl(categoryImg, categoryName, "png")}
                   alt={categoryName}
@@ -202,7 +209,14 @@ const ShopByCategory = () => {
         <div className="flex-row flex-justify-evenly flex-align-center flex-wrap gap-1 my-1 mx-3 py-1 px-3">
           {petCategories.map(({ _id, categoryImg, categoryName }) => (
             <div className="category-icons" key={_id}>
-              <Link className="btn" to="/products">
+              <Link
+                className="btn"
+                to="/products"
+                state={{
+                  filterType: "FILTER_BY_PET_CATEGORY",
+                  filterCategory: categoryName,
+                }}
+              >
                 <img
                   src={getFullImgUrl(categoryImg, categoryName, "png")}
                   alt={categoryName}
@@ -218,8 +232,7 @@ const ShopByCategory = () => {
           to="/products"
           className="btn btn-secondary w-20-pc m-1 px-3 py-1 rounded-full align-self-center text-center"
         >
-          {" "}
-          VIEW ALL{" "}
+          VIEW ALL
         </Link>
         {/* Background graphical paws (design elements) */}
         <PawBgPrints />
@@ -238,16 +251,16 @@ const ShopByCategory = () => {
 
 const TopFoodBrands = () => {
   const foodBrandImgs = [
-    { foodBrandImgSrc: foodBrandImg1 },
-    { foodBrandImgSrc: foodBrandImg2 },
-    { foodBrandImgSrc: foodBrandImg3 },
-    { foodBrandImgSrc: foodBrandImg4 },
-    { foodBrandImgSrc: foodBrandImg5 },
-    { foodBrandImgSrc: foodBrandImg6 },
-    { foodBrandImgSrc: foodBrandImg7 },
-    { foodBrandImgSrc: foodBrandImg8 },
-    { foodBrandImgSrc: foodBrandImg9 },
-    { foodBrandImgSrc: foodBrandImg10 },
+    { foodBrandImgSrc: foodBrandImg1, foodBrandName: "Pedigree" },
+    { foodBrandImgSrc: foodBrandImg2, foodBrandName: "Royal Canin" },
+    { foodBrandImgSrc: foodBrandImg3, foodBrandName: "Sheba" },
+    { foodBrandImgSrc: foodBrandImg4, foodBrandName: "Heads Up For Tails" },
+    { foodBrandImgSrc: foodBrandImg5, foodBrandName: "Farmina" },
+    { foodBrandImgSrc: foodBrandImg6, foodBrandName: "Kong" },
+    { foodBrandImgSrc: foodBrandImg7, foodBrandName: "Isle of Dogs" },
+    { foodBrandImgSrc: foodBrandImg8, foodBrandName: "Savic" },
+    { foodBrandImgSrc: foodBrandImg9, foodBrandName: "Trixie" },
+    { foodBrandImgSrc: foodBrandImg10, foodBrandName: "Happi Doggy" },
   ];
 
   const [startImg, setStartImg] = useState(0);
@@ -278,10 +291,17 @@ const TopFoodBrands = () => {
         </div>
         <div className="section-with-sliders w-80-pc flex-row flex-justify-center relative">
           <div className="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
-            {foodBrandImgs.map(({ foodBrandImgSrc }, index) => {
+            {foodBrandImgs.map(({ foodBrandImgSrc, foodBrandName }, index) => {
               if (index >= startImg && index <= startImg + 3) {
                 return (
-                  <Link to="/products" key={index}>
+                  <Link
+                    to="/products"
+                    key={index}
+                    state={{
+                      filterType: "FILTER_BY_BRAND",
+                      filterCategory: foodBrandName,
+                    }}
+                  >
                     <img
                       className="w-full rounded-lg"
                       src={foodBrandImgSrc}
@@ -573,7 +593,15 @@ const FeaturedBrands = () => {
         </div>
         <div className="section-featured-brand flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
           {brands.map(({ _id, brandName, brandImg }) => (
-            <Link to="/products" className="btn" key={_id}>
+            <Link
+              to="/products"
+              className="btn"
+              key={_id}
+              state={{
+                filterType: "FILTER_BY_BRAND",
+                filterCategory: brandName,
+              }}
+            >
               <img
                 src={getFullImgUrl(brandImg, brandName, "png")}
                 alt={brandName}
