@@ -7,7 +7,7 @@ import {
   getDiscountedPrice,
   useBrands,
 } from "../../utils";
-import { useProducts } from "../../contexts";
+import { useProducts, useFilter } from "../../contexts";
 import { useDocumentTitle } from "../../custom-hooks";
 
 // Carousel Image Imports
@@ -44,6 +44,17 @@ import { PawBgPrints } from "../../components";
 // Main HomePage Export Component
 const HomePage = () => {
   const [setDocumentTitle] = useDocumentTitle();
+  const { filterDispatch } = useFilter();
+
+  const handleNavigationFilterDispatch = (filterType, filterCategory) => {
+    filterDispatch({
+      type: "CLEAR_ALL_FILTERS",
+    });
+    filterDispatch({
+      type: filterType,
+      payload: filterCategory,
+    });
+  };
 
   useEffect(() => {
     setDocumentTitle("Petkart | HomePage");
@@ -52,11 +63,17 @@ const HomePage = () => {
   return (
     <div>
       <Carousel />
-      <ShopByCategory />
-      <TopFoodBrands />
+      <ShopByCategory
+        navigationFilterDispatch={handleNavigationFilterDispatch}
+      />
+      <TopFoodBrands
+        navigationFilterDispatch={handleNavigationFilterDispatch}
+      />
       <TopOffers />
       <TopPicks />
-      <FeaturedBrands />
+      <FeaturedBrands
+        navigationFilterDispatch={handleNavigationFilterDispatch}
+      />
       <FacilitesOffered />
     </div>
   );
@@ -152,8 +169,9 @@ const Carousel = () => {
   );
 };
 
-const ShopByCategory = () => {
+const ShopByCategory = ({ navigationFilterDispatch }) => {
   const [categories, petCategories] = useCategories();
+
   return (
     <div>
       {/* Category Icons */}
@@ -167,10 +185,12 @@ const ShopByCategory = () => {
               <Link
                 className="btn"
                 to="/products"
-                state={{
-                  filterType: "FILTER_BY_PRODUCT_CATEGORY",
-                  filterCategory: categoryName,
-                }}
+                onClick={() =>
+                  navigationFilterDispatch(
+                    "FILTER_BY_PRODUCT_CATEGORY",
+                    categoryName
+                  )
+                }
               >
                 <img
                   src={getFullImgUrl(categoryImg, categoryName, "png")}
@@ -212,10 +232,12 @@ const ShopByCategory = () => {
               <Link
                 className="btn"
                 to="/products"
-                state={{
-                  filterType: "FILTER_BY_PET_CATEGORY",
-                  filterCategory: categoryName,
-                }}
+                onClick={() =>
+                  navigationFilterDispatch(
+                    "FILTER_BY_PET_CATEGORY",
+                    categoryName
+                  )
+                }
               >
                 <img
                   src={getFullImgUrl(categoryImg, categoryName, "png")}
@@ -249,7 +271,7 @@ const ShopByCategory = () => {
   );
 };
 
-const TopFoodBrands = () => {
+const TopFoodBrands = ({ navigationFilterDispatch }) => {
   const foodBrandImgs = [
     { foodBrandImgSrc: foodBrandImg1, foodBrandName: "Pedigree" },
     { foodBrandImgSrc: foodBrandImg2, foodBrandName: "Royal Canin" },
@@ -297,10 +319,9 @@ const TopFoodBrands = () => {
                   <Link
                     to="/products"
                     key={index}
-                    state={{
-                      filterType: "FILTER_BY_BRAND",
-                      filterCategory: foodBrandName,
-                    }}
+                    onClick={() =>
+                      navigationFilterDispatch("FILTER_BY_BRAND", foodBrandName)
+                    }
                   >
                     <img
                       className="w-full rounded-lg"
@@ -573,7 +594,7 @@ const TopPicks = () => {
   );
 };
 
-const FeaturedBrands = () => {
+const FeaturedBrands = ({ navigationFilterDispatch }) => {
   const [brands] = useBrands();
 
   return (
@@ -597,10 +618,9 @@ const FeaturedBrands = () => {
               to="/products"
               className="btn"
               key={_id}
-              state={{
-                filterType: "FILTER_BY_BRAND",
-                filterCategory: brandName,
-              }}
+              onClick={() =>
+                navigationFilterDispatch("FILTER_BY_BRAND", brandName)
+              }
             >
               <img
                 src={getFullImgUrl(brandImg, brandName, "png")}
