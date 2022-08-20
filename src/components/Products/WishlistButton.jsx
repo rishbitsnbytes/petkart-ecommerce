@@ -6,6 +6,7 @@ import {
   deleteFromWishlist,
   deleteFromCart,
 } from "../../utils";
+import { useToast } from "../../custom-hooks";
 import { useWishlist, useAuth, useCart } from "../../contexts";
 
 /* This component accepts 2 props :-  
@@ -34,6 +35,7 @@ const WishlistButton = ({
     cartState: { cartItems, isCartLoading, cartError },
     cartDispatch,
   } = useCart();
+  const { showToast } = useToast();
   const { _id, staticId } = product;
 
   const isProductInWishlist = wishlistItems?.find(
@@ -63,6 +65,12 @@ const WishlistButton = ({
           wishlistError: null,
         },
       });
+      showToast(
+        isProductInWishlist
+          ? "Item removed from wishlist"
+          : "Item added to wishlist",
+        "success"
+      );
       setLoadingState(false);
     } catch (error) {
       wishlistDispatch({
@@ -72,6 +80,12 @@ const WishlistButton = ({
           wishlistError: `Wishlist could not be fetched. Try again. ErrorMessage: ${error}`,
         },
       });
+      showToast(
+        isProductInWishlist
+          ? "Item could not be removed from wishlist. Try again."
+          : "Item could not be added to wishlist. Try again.",
+        "error"
+      );
       setLoadingState(false);
     }
   };
@@ -121,7 +135,9 @@ const WishlistButton = ({
             cartError: `Cart could not be updated. Try again. ErrorMessage: ${error}`,
           },
         });
+        showToast("Item could not be removed from cart. Try again!", "error");
       }
+      showToast("Item moved to wishlist", "success");
       setLoadingState(false);
     } catch (error) {
       wishlistDispatch({
@@ -131,6 +147,7 @@ const WishlistButton = ({
           wishlistError: `Wishlist could not be upadted. Try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Item could not be moved to wishlist. Try again!", "error");
       setLoadingState(false);
     }
   };

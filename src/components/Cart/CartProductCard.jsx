@@ -6,6 +6,7 @@ import {
   postCartItemQtyUpdate,
 } from "../../utils";
 import { useAuth, useCart } from "../../contexts";
+import { useToast } from "../../custom-hooks";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ const CartProductCard = ({ product }) => {
   const {
     authState: { authToken },
   } = useAuth();
+  const { showToast } = useToast();
   const { cartDispatch } = useCart();
   const {
     _id,
@@ -40,6 +42,7 @@ const CartProductCard = ({ product }) => {
           cartError: null,
         },
       });
+      showToast("Item quantity updated.", "success");
       setLoadingState(false);
     } catch (error) {
       cartDispatch({

@@ -5,6 +5,7 @@ import { AllProviders } from "./AllProviders";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ScrollToTop } from "./utils";
+import { ToastPortal } from "./components";
 
 // Call make Server
 makeServer();
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Router>
       <AllProviders>
         <ScrollToTop>
+          <ToastPortal />
           <App />
         </ScrollToTop>
       </AllProviders>
