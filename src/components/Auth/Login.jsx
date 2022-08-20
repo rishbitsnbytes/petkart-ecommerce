@@ -1,10 +1,14 @@
 import "./auth-components.css";
 import { useEffect, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import { useAuthFormData, useDocumentTitle } from "../../custom-hooks";
+import {
+  useAuthFormData,
+  useDocumentTitle,
+  useToast,
+} from "../../custom-hooks";
 import { useAuth } from "../../contexts";
 import { initiateLogin, setAuthStateInLocalStorage } from "../../utils";
-import { LoadingAnimation } from "../../components";
+import { LoadingAnimation, ToastPortal } from "../../components";
 
 const Login = ({ activeAuthComponentDisplay }) => {
   const { authState, setAuthState } = useAuth();
@@ -13,6 +17,7 @@ const Login = ({ activeAuthComponentDisplay }) => {
   const { email, password, rememberMe } = authFormDataState;
   const [showPassword, setShowPassword] = useState();
   const [loadingState, setLoadingState] = useState(false);
+  const { showToast } = useToast();
   const location = useLocation();
   const navigate = useNavigate();
   const [setDocumentTitle] = useDocumentTitle();
@@ -38,14 +43,15 @@ const Login = ({ activeAuthComponentDisplay }) => {
       await initiateLogin(authState, setAuthState, authFormDataState);
       const from = location?.state?.from?.pathname ?? -1;
       navigate(from, { replace: true });
+      showToast("Logged in successfully", "success");
       setLoadingState(false);
     } catch (error) {
       authFormDataDispatch({
         type: "CLEAR_AUTH_FORM_DATA",
         payload: "",
       });
+      showToast(`${error}`, "error");
       setLoadingState(false);
-      console.log("This error occured:", error);
     }
   };
 
@@ -170,11 +176,6 @@ const Login = ({ activeAuthComponentDisplay }) => {
               </span>
             </Link>
           </div>
-          {authError && (
-            <p className="auth-error h4 p-1 m-1 rounded-md">
-              Error Occured :<span> {authError} </span>
-            </p>
-          )}
         </form>
       )}
     </div>

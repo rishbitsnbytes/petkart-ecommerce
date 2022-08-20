@@ -31,6 +31,7 @@ const initiateLogin = async (
           authError: "Auth-Token or User-Info received undefined from server.",
         };
       });
+      throw "Auth-Token or User-Info received undefined from server.";
     }
   } catch (error) {
     if (error.message.includes("401")) {
@@ -43,7 +44,7 @@ const initiateLogin = async (
           authError: "Wrong E-mail or Password. Kindly Enter correct details.",
         };
       });
-      throw error;
+      throw "Wrong E-mail or Password. Kindly Enter correct details.";
     } else if (error.message.includes("404")) {
       updateAuthState((prevAuthState) => {
         return {
@@ -54,7 +55,7 @@ const initiateLogin = async (
           authError: "Entered E-mail is not registered. Kindly Sign-Up first.",
         };
       });
-      throw error;
+      throw "Entered E-mail is not registered. Kindly Sign-Up first.";
     } else if (error.message.includes("500")) {
       updateAuthState((prevAuthState) => {
         return {
@@ -65,7 +66,7 @@ const initiateLogin = async (
           authError: "Some Internal Server Error Occured. Try again later.",
         };
       });
-      throw error;
+      throw "Some Internal Server Error Occured. Try again later.";
     } else {
       updateAuthState((prevAuthState) => {
         return {
@@ -76,7 +77,7 @@ const initiateLogin = async (
           authError: error.message,
         };
       });
-      throw error;
+      throw error.message;
     }
   }
 };

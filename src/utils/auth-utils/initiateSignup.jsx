@@ -31,6 +31,7 @@ const initiateSignup = async (
         user: null,
         authError: "Auth-Token or User-Info received undefined from server.",
       }));
+      throw "Auth-Token or User-Info received undefined from server.";
     }
   } catch (error) {
     if (error.message.includes("422")) {
@@ -42,7 +43,7 @@ const initiateSignup = async (
         authError:
           "Email already exist! Either signup with different Email or Proceed to Login if you are already an user.",
       }));
-      throw error;
+      throw "Email already exist! Either signup with different Email or Proceed to Login if you are already an user.";
     } else if (error.message.includes("500")) {
       updateAuthState((prevAuthState) => ({
         ...prevAuthState,
@@ -51,7 +52,7 @@ const initiateSignup = async (
         user: null,
         authError: "Some Internal Server Error Occured. Try again later.",
       }));
-      throw error;
+      throw "Some Internal Server Error Occured. Try again later.";
     } else {
       updateAuthState((prevAuthState) => ({
         ...prevAuthState,
@@ -60,7 +61,7 @@ const initiateSignup = async (
         user: null,
         authError: error.message,
       }));
-      throw error;
+      throw error.message;
     }
   }
 };

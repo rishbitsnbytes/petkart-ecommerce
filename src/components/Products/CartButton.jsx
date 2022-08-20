@@ -1,4 +1,5 @@
 import { useAuth, useCart, useWishlist } from "../../contexts";
+import { useToast } from "../../custom-hooks";
 import { useNavigate, useLocation } from "react-router-dom";
 import { postToCart, deleteFromCart, deleteFromWishlist } from "../../utils";
 import { useState } from "react";
@@ -23,10 +24,8 @@ const CartButton = ({
     cartState: { cartItems, isCartLoading, cartError },
     cartDispatch,
   } = useCart();
-  const {
-    wishlistState: { wishlistItems },
-    wishlistDispatch,
-  } = useWishlist();
+  const { wishlistDispatch } = useWishlist();
+  const { showToast } = useToast();
 
   const {
     _id,
@@ -62,6 +61,7 @@ const CartButton = ({
           cartError: null,
         },
       });
+      showToast("Item added to cart", "success");
       setLoadingState(false);
     } catch (error) {
       cartDispatch({
@@ -71,6 +71,7 @@ const CartButton = ({
           cartError: `Cart could not be updated. Try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Item could not be added to cart. Try again!", "error");
       setLoadingState(false);
     }
   };
@@ -120,7 +121,9 @@ const CartButton = ({
             wishlistError: `Wishlist could not be updated, Try again. ErrorMessage: ${error}`,
           },
         });
+        showToast("Wishlist could not be updated. Try again!", "error");
       }
+      showToast("Item moved to cart", "success");
       setLoadingState(false);
     } catch (error) {
       cartDispatch({
@@ -130,6 +133,7 @@ const CartButton = ({
           cartError: `Cart could not be updated. Try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Item could not be moved to cart. Try again!", "error");
       setLoadingState(false);
     }
   };
@@ -155,6 +159,7 @@ const CartButton = ({
           cartError: null,
         },
       });
+      showToast("Item removed from cart", "success");
     } catch (error) {
       cartDispatch({
         type: "CART_ERROR",
@@ -163,6 +168,7 @@ const CartButton = ({
           cartError: `Cart could not be updated. Try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Item could not be removed from cart. Try again!", "error");
       setLoadingState(false);
     }
   };

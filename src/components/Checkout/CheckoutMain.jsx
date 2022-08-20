@@ -17,6 +17,7 @@ import {
   postNewOrder,
   clearCart,
 } from "../../utils";
+import { useToast } from "../../custom-hooks";
 import petkartLogo from "../../../src/assets/others/petkart-logo-gif.gif";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -35,6 +36,7 @@ const CheckoutMain = () => {
   const { firstName, lastName, email } = user;
   const { ordersDispatch } = useOrders();
   const { cartDispatch } = useCart();
+  const { showToast } = useToast();
   const {
     checkoutData: {
       orderedItems,
@@ -108,6 +110,7 @@ const CheckoutMain = () => {
   };
 
   const placeOrder = async (order) => {
+    window.scrollTo(0, 0);
     setLoadingState(true);
     try {
       const {
@@ -121,6 +124,7 @@ const CheckoutMain = () => {
           ordersError: null,
         },
       });
+      showToast("Order placed successfully!", "success");
       try {
         const {
           data: { cart },
@@ -152,6 +156,7 @@ const CheckoutMain = () => {
           ordersError: `Order could not be placed due to some network error. Please try again, ErrorMessage: ${error}`,
         },
       });
+      showToast("Order could not be placed. Try again!", "error");
       setLoadingState(false);
     }
   };

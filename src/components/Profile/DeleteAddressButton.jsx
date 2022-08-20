@@ -1,6 +1,7 @@
 import "./profile.css";
 import { deleteAddress } from "../../utils";
 import { useAuth, useAddresses } from "../../contexts";
+import { useToast } from "../../custom-hooks";
 import { useState } from "react";
 
 const DeleteAddressButton = ({ address }) => {
@@ -10,6 +11,7 @@ const DeleteAddressButton = ({ address }) => {
   const {
     authState: { authToken },
   } = useAuth();
+  const { showToast } = useToast();
 
   const handleAddressDelete = async (event) => {
     event.preventDefault();
@@ -22,6 +24,7 @@ const DeleteAddressButton = ({ address }) => {
         type: "ADDRESSES_UPDATE",
         payload: { addresses: addresses, areAddressesLoading: false },
       });
+      showToast("Address deleted successfully", "success");
       setLoadingState(false);
     } catch (error) {
       addressesDispatch({
@@ -31,6 +34,7 @@ const DeleteAddressButton = ({ address }) => {
           addressesError: `Addresses could not be fetched due to some server error. Please try again. ErrorMessage: ${error}`,
         },
       });
+      showToast("Address could not be deleted. Try again.", "error");
       setLoadingState(false);
     }
   };
