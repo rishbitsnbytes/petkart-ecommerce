@@ -1,0 +1,109 @@
+.auth-form input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-tertiary);
+    border-radius: var(--br-md);
+}
+
+.auth-form input:not([type="checkbox"]).input-error {
+    border: 2px solid var(--color-form-element-border-error);
+    border-radius: var(--br-md);
+}
+
+.auth-form .password-eye {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+.auth-form .password-eye:focus i {
+    box-shadow: 0px 0px 20px 1px var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.auth-form input[type="checkbox"] {
+    color: var(--color-tertiary);
+    accent-color: var(--color-tertiary);
+    width: 2rem;
+    height: 2rem;
+}
+
+.auth-form input:focus {
+    border: 2px solid var(--color-tertiary);
+    box-shadow: 0px 0px 20px 2px var(--color-secondary);
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: var(--color-quarternary);
+    color: var(--black);
+    font-weight: var(--weight-xbold);
+    z-index: 2;
+    opacity: 0;
+}
+
+.remember-me-btn .tooltip {
+    left: 100%;
+}
+
+.remember-me-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.remember-me-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(0%, -50%);
+    border: 1.2rem solid;
+    border-color: transparent var(--color-quarternary) transparent transparent;
+}
+
+.password-eye .tooltip {
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%, 0%);
+}
+
+.password-eye:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.password-eye .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    border: 1rem solid;
+    border-color: var(--color-quarternary) transparent transparent transparent;
+}
+
+.sign-up-btn .tooltip {
+    left: 100%;
+}
+
+.sign-up-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.sign-up-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(0%, -50%);
+    border: 1.2rem solid;
+    border-color: transparent var(--color-quarternary) transparent transparent;
+}
+
+.auth-error {
+    background-color: var(--color-secondary);
+}

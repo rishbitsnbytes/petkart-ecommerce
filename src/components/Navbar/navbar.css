@@ -1,0 +1,18 @@
+.nav-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: rgba(162,213,171, 0.8);
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+}
+
+.nav-bar .active-link {
+    color: var(--color-tertiary);
+    font-weight: var(--weight-bold);
+}
+
+.nav-bar .btn-icon-logout {
+    color: var(--black);
+}

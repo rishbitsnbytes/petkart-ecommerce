@@ -1,0 +1,46 @@
+.paw-bg-prints-wrapper {
+    z-index: -1;
+}
+
+.paw-bg-spots {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.paw-bg-prints-wrapper .paw-spot-1 {
+    top: 12%;
+    left: 5%;
+    transform: rotate(-30deg);
+    transition: all 5s ease-in-out;
+}
+
+.paw-bg-prints-wrapper .paw-spot-2 {
+    top: 45%;
+    right: 27%;
+    transform: rotate(0deg);
+    transition: all 5s ease-in-out;
+}
+
+.paw-bg-prints-wrapper .paw-spot-3 {
+    top: 20%;
+    right: 5%;
+    transform: rotate(15deg);
+    transition: all 5s ease-in-out;
+}
+
+.paw-bg-prints-wrapper .paw-spot-4 {
+    top: 88%;
+    right: 20%;
+    transform: rotate(-30deg);
+    transition: all 5s ease-in-out;
+}
+
+.paw-bg-prints-wrapper .paw-spot-5 {
+    top: 70%;
+    left: 15%;
+    transform: rotate(20deg);
+    transition: all 5s ease-in-out;
+}
